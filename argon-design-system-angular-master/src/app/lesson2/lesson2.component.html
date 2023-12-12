@@ -1,0 +1,142 @@
+<div class="row justify-content-start m-2">
+
+    <div class="col-3 card bg-default p-3">
+     <div class="card-body">
+         <h2 class="card-title text-center text-light font-weight-bold">Broken Object Level Authorization</h2>
+         <blockquote class="blockquote text-start">
+           <p class="card-test text-light">{{msg}}</p>
+         </blockquote>
+        <div class="text-center">
+          <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">Back</button>
+           <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">Next</button>
+           <a href="#/lesson3"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
+         </div>
+        <!--<button (click)="nextStep()" type="button" class="btn btn-primary">Next</button>--> 
+     </div>
+     </div>
+ 
+     <div class="browser-box">
+     <div class="col- mr-5">
+         
+             <div class="fake-browser">
+               <header class="fake-browser-header">
+                 <div class="action-btns">
+                   <span></span>
+                   <span></span> <span></span>
+                 </div>
+                 <div class="address-bar">
+                   <input type="text" value="https://api.its.cr"/>
+                 </div>
+                 <div class="setting-more">
+                   <span class="more-btn"></span>
+                 </div>
+                 
+               </header>
+
+              <!-- Inicio DE NAVBAR-->
+               
+               <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand ml-1" href="#">ITS Fake Bank</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link">Transfer Funds</a>
+                      
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link">Payment History</a>
+                      
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link">My Account</a>
+                      
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link">Account Settings <span class="sr-only">(current)</span></a>
+                      
+                    </li>
+                    
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary my-2 my-sm-0 mr-1" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+
+              <!-- FIN DE NAVBAR-->
+
+               <section class="fake-window-body bg-white">
+                 <div class="p-5 text-center justify-content-center">
+                   <h2 class="mb-2">ITS Fake Bank</h2>
+                   <form>
+                    <label class="h3 mb-2">Account Settings</label>
+                    <div class="row mb-3">
+                      <div class="col">
+                        <label>First Name</label>
+                        <input type="text" id="fName-input" class="form-control" value={{fName}} readonly>
+                      </div>
+                      <div class="col">
+                        <label>Last Name</label>
+                        <input type="text" id="lName-input" class="form-control" value={{lName}} readonly>
+                      </div>
+
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col text-{{color}}">
+                        <label>Account Num.</label>
+                        <input type="text" id="accNum-input" class="form-control" value={{accNum}} readonly>
+                      </div>
+                      <div class="col">
+                        <label>Account Amount</label>
+                        <input type="text" id="accAmo-input" class="form-control" value={{accAmo}} readonly>
+                      </div>
+
+                    </div>
+                    
+                   </form>
+                     
+                   <div class="text-center"> <!-- si se quiere meter al form group para q agarre horizontal agregue a esta clase row + margin y metalo al form-->
+                    <div class="col mb-2 mt-2">
+                      <!-- <button class="btn btn-primary">View Account History</button> -->
+                      <div class="text-center">
+                        <button *ngIf="showIns" (click)="respShow()" class="btn btn-warning">Inspect</button>
+                        <div class="resp-json-box w-0">
+                          <code *ngIf="showResp" class="text-default"> {{response}}</code>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                   
+                  </div>  
+                    
+                    
+                 </div>
+                 
+               </section>
+             </div>
+           </div>
+     
+   </div>
+   </div>
+
+   <!--
+    <div class="form-inline">
+                             <div class="form-group mb-1">
+                               <label class="font-weight-bold" disabled>URL</label>
+                               <input type="text" class="form-control text-center text-body" id="first_name" placeholder="https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41" readonly>
+                               <input type="text" class="form-control text-center text-body" id="first_name" placeholder="https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41" readonly>
+                               
+                            </div>
+                            
+                         </div>
+                         
+   -->
