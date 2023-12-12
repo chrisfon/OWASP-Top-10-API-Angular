@@ -1,7 +1,8 @@
-.resp-json-box{
-    margin-top: -20px;
-}
+
 .disable-cond[disabled]{
     pointer-events:none;
     
+}
+.form-control[readonly]{
+    color:red;
 }

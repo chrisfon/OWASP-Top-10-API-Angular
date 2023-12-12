@@ -15,16 +15,18 @@ showNextLesson = false;
 showResp = false;
 showNext = true;
 showPrev = true;
+showCopy = false;
 compDisabled = false;
 showIns = false;
-fName = "";
+showResult = false;
+emailInput = "bad.actor@itsmail.com";
 lName = "";
 accNum = "";
 accAmo = "";
 color = "black-50";
 isDisabled = true;
 response =
-  "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'John', \n'Last Name' : 'Smith', \n'AccountNum' : 'CR11111111111',\n'Account Amount' : '6000'\n}";
+"PUT /account\nAuthorization: Bearer <token> \n\n {'email': '<new_email_address>'}";
 
 changeMsg() {
   switch (this.pagenum) {
@@ -49,6 +51,7 @@ changeMsg() {
       this.msg =
       "A bad implementation for authentication will not check and recheck (if already logged in) for credentials or if the user can access this function. This can lead to misuse of functinos to access other users credentials or authenticate as another user. \n\nAn example of vulnerable authentication code can be as following:"
       ;
+      this.showResp = true;
       this.showIns = false;
       break;
     }
@@ -64,14 +67,20 @@ changeMsg() {
     case (this.pagenum = 5): {
       this.showResp = false;
       this.msg =
-      "TRY IT\n\n Based on last step's example, an attacker can use an email they control, and then try calling to that API using our stolen authentication token from an admin of the website to change the admin's account email to the attacker's.\n\nStolen Authentication Token:\n 1b1h34jkn7io7oi51lk34k\n\nCreated Email address:\n bad.actor@itsmail.com";
+      "TRY IT\n\n Based on last step's example, an attacker can use an email they control, and then try calling to that API using our stolen authentication token from an admin of the website to change the admin's account email to the attacker's.\n\nStolen Authentication Token:\n 1b1h34jkn7io7oi51lk34k \n\nCreated Email address:\n bad.actor@itsmail.com";
+      this.showCopy = true;
+      this.showNext = false;
+      this.showPrev = false;
       this.isDisabled = false;
       break;
     }
     case (this.pagenum = 6): {
       this.msg =
-      "As seen in the example, in this case the attacker could access the compromised account via changing its password with an email. Access to any admin account could result in severe damages. \n\nAn example of a more secure code to prevent this could be like the one located in the code box below. Where....";
+      "As seen in the example, in this case the attacker could access the compromised account via changing its password with an email. Access to any admin account could result in severe damages. \n\nAn example of a more way to prevent this could be a simple prompt for user to type their password again, or a system where when a user wants to change their email they have to confirm an ID or code sent to them before the changes take effect.";
       //show correct code
+      this.response=""
+      this.showNext = true;
+      this.showPrev = true;
       break;
     }
     case (this.pagenum = 7): {
@@ -82,7 +91,7 @@ changeMsg() {
     }
     case (this.pagenum = 8): {
       this.msg =
-        "For testing an API for this kind of vulnerability it is crucial to keep a documented list of checkpoints, OWASP reccomends; Checking POST method is used for send data through HTTPS, make sure admin account cannot be blocked from invalid login atttempts, test for credential stuffing and brute force attacks (this can be done with tools such as hydra or wfuzz), check that the lockout mechanism is working properly, test for cache and history mechanism weaknesses, check any input related to password recovery and security has limited attempts, and verify every security measure in mobile (if it applies).";
+        "For testing an API for this kind of vulnerability it is important to keep a documented list of checkpoints, OWASP reccomends; Checking POST method is used for send data through HTTPS, make sure admin account cannot be blocked from invalid login atttempts, test for credential stuffing and brute force attacks (this can be done with tools such as hydra or wfuzz), check that the lockout mechanism is working properly, test for cache and history mechanism weaknesses, check any input related to password recovery and security has limited attempts, and verify every security measure in mobile (if it applies).";
       //this.showResp = true;
 
       break;
@@ -112,37 +121,26 @@ prevMsg() {
 }
 
 respShow() {
-  if (this.pagenum < 5) {
-    this.changeTextColorBlack();
-    this.showResp = !this.showResp;
-    this.showNext = true;
-    this.showPrev = true;
-    this.fName = "John";
-    this.lName = "Smith";
-    this.accNum = "CR11111111111";
-    this.accAmo = "$6000";
-  } else if (this.pagenum > 4) {
-    this.changeTextColorRed();
-    this.showResp = !this.showResp;
-    this.showNext = true;
-    this.showPrev = true;
-    this.fName = "Jane";
-    this.lName = "Doe";
-    this.accNum = "CR21212121212";
-    this.accAmo = "$100,000";
+
+}
+putClick(){
+  let input = (<HTMLInputElement>document.getElementById('token-input')).value;
+  //se usa lo de <> para que se sepa que es un html element que contiene una propiedad "value"
+  console.log(input);
+  if (input == '1b1h34jkn7io7oi51lk34k'){
+    this.showResult = true; //PARA QUE MUESTRE PANTALLA DE RESULTADO
+    
+    this.showCopy = false;
+    this.nextMsg();
+  }else{
+    alert("Wrong value for token...");
   }
 }
-
 changeTextColorRed() {
-  this.response = "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'Jane', \n'Last Name' : 'Doe', \n'AccountNum' : 'CR21212121212',\n'Account Amount' : '100,000'\n}";
-  const fnameInput = document.getElementById("fName-input");
-  fnameInput.style.color = "red";
-  const lnameInput = document.getElementById("lName-input");
-  lnameInput.style.color = "red";
-  const accNumInput = document.getElementById("accNum-input");
-  accNumInput.style.color = "red";
-  const accAmoInput = document.getElementById("accAmo-input");
-  accAmoInput.style.color = "red";
+  //this.response = "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'Jane', \n'Last Name' : 'Doe', \n'AccountNum' : 'CR21212121212',\n'Account Amount' : '100,000'\n}";
+  const eInput = document.getElementById("email-input");
+  eInput.style.color = "red";
+
 }
 changeTextColorBlack() {
   this.response="HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'John', \n'Last Name' : 'Smith', \n'AccountNum' : 'CR11111111111',\n'Account Amount' : '6000'\n}";
@@ -154,6 +152,19 @@ changeTextColorBlack() {
   accNumInput.style.color = "black";
   const accAmoInput = document.getElementById("accAmo-input");
   accAmoInput.style.color = "black";
+}
+copyMessage(val: string){
+  const selBox = document.createElement('textarea');
+  selBox.style.position = 'fixed';
+  selBox.style.left = '0';
+  selBox.style.top = '0';
+  selBox.style.opacity = '0';
+  selBox.value = val;
+  document.body.appendChild(selBox);
+  selBox.focus();
+  selBox.select();
+  document.execCommand('copy');
+  document.body.removeChild(selBox);
 }
 
   constructor() { }
