@@ -6,6 +6,9 @@ MAYBE CAMBIE COLOR A VERDE OSCURO (army o olive) CON CAFE CLARO(beige?)
 html {
     background-color: #26315b;
 }
+label{
+  font-size: 16px !important;
+}
 body {
     background-color: #26315b !important; 
 }

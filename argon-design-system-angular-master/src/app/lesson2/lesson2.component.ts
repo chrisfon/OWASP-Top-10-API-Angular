@@ -20,6 +20,7 @@ export class Lesson2Component implements OnInit {
   accNum = "";
   accAmo = "";
   color = "black-50";
+  isDisabled = true;
   response =
     "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'John', \n'Last Name' : 'Smith', \n'AccountNum' : 'CR11111111111',\n'Account Amount' : '6000'\n}";
 
@@ -51,6 +52,7 @@ export class Lesson2Component implements OnInit {
       case (this.pagenum = 4): {
         this.msg =
           "TRY IT!\n\n Click the inspect button in the browser to see the JSON object that is being pulled when accessing the user settings.\n\n In this case it calls to our api using the GET method towards api/user/[userID]";
+        this.isDisabled = false;
         this.showNext = false;
         this.showPrev = false;
         this.showIns = true;

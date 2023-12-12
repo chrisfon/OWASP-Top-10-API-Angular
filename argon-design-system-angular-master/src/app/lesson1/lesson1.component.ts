@@ -15,6 +15,7 @@ export class Lesson1Component implements OnInit {
  showNext = true;
  showPrev = true;
  compDisabled=false;
+ isDisabled = true;
  response="{\n'latitude': 52.52,\n'longitude': 13.419998,\n'timezone': 'GMT',\n'timezone_abbreviation': 'GMT',\n'elevation': 38.0\n}"
 
  changeMsg(){
@@ -41,7 +42,8 @@ export class Lesson1Component implements OnInit {
         }
     case this.pagenum=4: {
         this.msg="Most RESTful APIs will accept and return data in a JSON or XML format which we then can change with a programming language to proces the data however a developer would like. In some cases it can return data in plain text, HTML, or YAML.\n\n Try it in the example window to see how a JSON file would look like and continue";
-          break;
+        this.isDisabled = false; 
+        break;
           }
     case this.pagenum=5: {
         this.msg="An example of usages of API can be something as simple as calling to a weather API (with GET and some IDs in this case) that will return current weather conditions of specified latitud and longitud (included in the address)";

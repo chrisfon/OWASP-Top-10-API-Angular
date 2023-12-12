@@ -9,7 +9,7 @@ export class Lesson3Component implements OnInit {
 
 
   msg =
-  "Welcome to the first vulnerability we will be learning about. Broken Object Level Authorization.\n\n Click next and follow the steps.";
+  "Welcome to the second vulnerability's lesson. Broken Authencation.\n Click next and follow the steps.";
 pagenum = 0;
 showNextLesson = false;
 showResp = false;
@@ -22,6 +22,7 @@ lName = "";
 accNum = "";
 accAmo = "";
 color = "black-50";
+isDisabled = true;
 response =
   "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'John', \n'Last Name' : 'Smith', \n'AccountNum' : 'CR11111111111',\n'Account Amount' : '6000'\n}";
 
@@ -30,56 +31,65 @@ changeMsg() {
     case (this.pagenum = 0): {
       this.showNext = true;
       this.msg =
-        "Welcome to the first vulnerability we will be learning about. Broken Object Level Authorization.\n\n Click next and follow the steps.";
+      "Welcome to the second vulnerability's lesson. Broken Authencation.\n Click next and follow the steps.";
       this.showIns = false;
       break;
     }
     case (this.pagenum = 1): {
       this.msg =
-        "Object Level Authorization is a means of access control mechanism that is in charge of validating that a user can only access objects that they have permision to view or manipulate.\n\nIt is a crucial part of any API because APIs can contain tons of valuable information from every user or type of object. \n For example; an api to pull user information such as account number, amount, etc.";
+      "Broken Authentication is defined by OWASP as authentications mechanisms that are implemented incorrectly, allowing attacker to compromise authentication tokens or to exploit implementation flaws. In other words, it includes any vulnerabilities that compromise a system's ability to identify users correctly.\n\nThe potential impact of this type of vulnerability can be extremely high as it lets the attackers take over other users' accounts and access anything the compromised users has access to.";
       break;
     }
     case (this.pagenum = 2): {
       this.msg =
-        "OWASP defines a Broken Object Level Authorization (or BOLA) vulnerability as failures in this mechanism that typically lead to unauthorized information disclosure, modification, or destruction of all data.";
+        "Failures in this mechanism that typically lead to unauthorized information disclosure, modification, or destruction of all data.\n\n This type of vulnerability is generally due to lack of protections mechanisms for Authentication API endpoints and/or bad implementations of the mechanisms (vulnerable code).\nSeveral factors can affect this vulnerability including: weak passwords allowed, failure to provision unique certificates per device (when aplicable), authentication material included in requests or URL, API keys as only authentication material, use of small key sized in encryption algorithms, no implementation of 2fa or mfa.";
       break;
     }
     case (this.pagenum = 3): {
       this.msg =
-        "As an example of this we can take an API that is used by a website that utlizes an API to pull user information when accesing and editing their profile.\n\n In this case we can check out our inspect and it will show us that the API uses a structure in their query that follows api/users/[ID].\n\nIf a BOLA vulnerability is present, and no verification of that the user making the call has permission to view the information called; then the attacker will be able to view the settings and information of any user by sending a GET request with another ID of his choice.";
+      "A bad implementation for authentication will not check and recheck (if already logged in) for credentials or if the user can access this function. This can lead to misuse of functinos to access other users credentials or authenticate as another user. \n\nAn example of vulnerable authentication code can be as following:"
+      ;
       this.showIns = false;
       break;
     }
     case (this.pagenum = 4): {
       this.msg =
-        "TRY IT!\n\n Click the inspect button in the browser to see the JSON object that is being pulled when accessing the user settings.\n\n In this case it calls to our api using the GET method towards api/user/[userID]";
-      this.showNext = false;
-      this.showPrev = false;
+        "For an example, we can imagine a company that has an e-commerce website and utilizes an API to authenticate users and to change their passwords. In this code they have implemented, we can see that it only check a single authentication token of whoever is making the PUT method call without re-confirming their authentication (asking for password again); leading to attackers that have stolen an authetication token to be able to use this function on that user even if he is not authenticated as that same user.";
+      //ense;ar el codigo vulnerable
+      this.showNext = true;
+      this.showPrev = true;
       this.showIns = true;
       break;
     }
     case (this.pagenum = 5): {
       this.showResp = false;
       this.msg =
-        "With any program to test APIs, (for example, POSTMAN) we can try and call to the API using another user ID; try it again with the Inspect button in the browser and notice the changes in red.\n\n In this case since there is no verification that the user making the API call is actually logged into the user they are searching, then it will let said user request information by using any other user's ID.";
+      "TRY IT\n\n Based on last step's example, an attacker can use an email they control, and then try calling to that API using our stolen authentication token from an admin of the website to change the admin's account email to the attacker's.\n\nStolen Authentication Token:\n 1b1h34jkn7io7oi51lk34k\n\nCreated Email address:\n bad.actor@itsmail.com";
+      this.isDisabled = false;
       break;
     }
     case (this.pagenum = 6): {
       this.msg =
-        "There are different ways to help fix this type of Vulnerability.\n\n A posible way that it can be mitigated can be through the use of UUIDs instead of a manually set or structured way to set ID. A UUID is an ID that is randomly generated with no specific pattern. This can make it much more difficult for attackers to identify other users ID.\n Another important step a developer must take to ensure that only authorized users can see their information is to validate that whoever is making the API call has permission to view the object before sending the API call.";
-
+      "As seen in the example, in this case the attacker could access the compromised account via changing its password with an email. Access to any admin account could result in severe damages. \n\nAn example of a more secure code to prevent this could be like the one located in the code box below. Where....";
+      //show correct code
       break;
     }
     case (this.pagenum = 7): {
       this.msg =
-        "Keep in mind that when testing an API's security for this type of vulnerability it is important to Identify session labels (what is used by the API to identify the logged-in user.), then send API requests using different user's session labels to make sure only the information the user has permission to view is opened. If not the vulnerability still exists.";
-      //this.showResp = true;
+      "There are different ways to avoid having this type of Vulnerability.\n First it is crucial to understand how all possible flows to authenticate using the API work. Use standards when it comes to toke generation and password storage, no need to reinvent it. It is important to implement rules and policies that will limit and avoid weak passwords, indefinite login attempts, and rate limiting. Where possible use multi-factor authentication.\n Another useful tool are Authentication Cheatsheets, which provide recomendations and can act as a guide to make sure your authentication mechanism is safe. OWASP provides its own authentication Cheatsheet here in its website https://cheatsheetseries.owasp.org";
 
       break;
     }
     case (this.pagenum = 8): {
       this.msg =
-        "In conclusion, BOLA is a vulnerability that is present when an API's GET call can be misused to view information you should not have access to. This can be due to predicatable and easy to guess IDs, and a bad (or non) implementation of access control to sensitive data.\n\nSome ways we can fix this can be through implementation of randomized ID with no pattern, access controls and checks for sensitive information, and authorization check when APIs are called.";
+        "For testing an API for this kind of vulnerability it is crucial to keep a documented list of checkpoints, OWASP reccomends; Checking POST method is used for send data through HTTPS, make sure admin account cannot be blocked from invalid login atttempts, test for credential stuffing and brute force attacks (this can be done with tools such as hydra or wfuzz), check that the lockout mechanism is working properly, test for cache and history mechanism weaknesses, check any input related to password recovery and security has limited attempts, and verify every security measure in mobile (if it applies).";
+      //this.showResp = true;
+
+      break;
+    }
+    case (this.pagenum = 9): {
+      this.msg =
+        "In conclusion, Broken Authentication is a very important vulnerability to understand because it can have a huge impact on any business or project. It's crucial we follow the best practices and standards when it comes to using an API to authenticate users. ";
       this.showNextLesson = true;
       //this.showResp = true;
       this.showNext = false;
@@ -152,3 +162,4 @@ changeTextColorBlack() {
   }
 
 }
+//quitar botones next, etc cuando tienen qhacer algo en lesson 2 y 3. mostrar resultado de ataque en lesson3 (acc settings page), lesson4
