@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-lesson4',
-  templateUrl: './lesson4.component.html',
-  styleUrls: ['./lesson4.component.css']
+  selector: 'app-lesson5',
+  templateUrl: './lesson5.component.html',
+  styleUrls: ['./lesson5.component.css']
 })
-export class Lesson4Component implements OnInit {
+export class Lesson5Component implements OnInit {
   msg =
   "Welcome to the first vulnerability we will be learning about. Broken Object Level Authorization.\n\n Click next and follow the steps.";
 pagenum = 0;
@@ -29,23 +29,23 @@ changeMsg() {
     case (this.pagenum = 0): {
       this.showNext = true;
       this.msg =
-        "Welcome to the thirn vulnerability we will be learning about. Broken Object Level Property Authorization.\n\n Click next and follow the steps.";
+        "Welcome to the fourth vulnerability we will be learning about. Unrestricted Resource Consumption.\n\n Click next and follow the steps.";
       this.showIns = false;
       break;
     }
     case (this.pagenum = 1): {
       this.msg =
-      "OWASP defines Broken Object Property Level Authorization as properties that are overexposed in an object that is accessible by the user. It is very important to take into consideration what properties of an object are exposed to who, not every user should have access to every property of an object, even if they are authorized to access some properties of the object. Even if exposing non sensitive data seems harmless this type of vulnerability can lead to escalation of privilage by an attacker, alteration of data, and access to sensitive data.";
+        "Unrestricted Resource Consumption is a simple but very important topic to know about when developing an API. This vulnerability includes any exploit that does not limit the amount of requests and resources can be consumed by a single user/client.\n\nAs a result, it can cause what is knows as a 'Deniel of Service' or DOS attack. This can momentarily interrupt production by overwheliming server or api capacity via high loads of traffic; leaving it to no longer be able to accept new requests.";
       break;
     }
     case (this.pagenum = 2): {
       this.msg =
-        "OWASP defines a Broken Object Level Authorization (or BOLA) vulnerability as failures in this mechanism that typically lead to unauthorized information disclosure, modification, or destruction of all data.";
+        "This type of vulnerability's impact can be extremey high and spread out. The most direct impact it has is a denial of service due to resource starvation but it can also indirectly affect costs due to high CPU demands (in case of cloud computing) and depending on the resource that is being used for the attack it can also cause increased costs in other areas such as storage needs.\n\n It is important for any API to implement rules and policies to limit resource consumption. Generally a safe API should have Execution timeouts, Maximum allocable memory, Maximum number of processes, Maximum upload file size and Third-party service providers' spending limit. ";
       break;
     }
     case (this.pagenum = 3): {
       this.msg =
-        "As an example of this we can take an API that is used by a website that utlizes an API to pull user information when accesing and editing their profile.\n\n In this case we can check out our inspect and it will show us that the API uses a structure in their query that follows api/users/[ID].\n\nIf a BOLA vulnerability is present, and no verification of that the user making the call has permission to view the information called; then the attacker will be able to view the settings and information of any user by sending a GET request with another ID of his choice.";
+        "An example attack scenario for this type of vulnerability can be a company that has an API endpoint for a user who forgot his password to reset it. In this workflow the API calls to a third party API from a telephone company to tell it to send a text to the number associated to the account that forgot its password. If there is a cost associated to each text (for example $0.05 if it was in the USA) and there is no limit; an attacker could potentially make a script that will call to the forget password api thousands of times, leading to a huge loss of money for the website owner.";
       this.showIns = false;
       break;
     }
