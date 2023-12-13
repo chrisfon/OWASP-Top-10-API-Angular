@@ -20,10 +20,6 @@ compDisabled = false;
 showIns = false;
 showResult = false;
 emailInput = "bad.actor@itsmail.com";
-lName = "";
-accNum = "";
-accAmo = "";
-color = "black-50";
 isDisabled = true;
 response =
 "PUT /account\nAuthorization: Bearer <token> \n\n {'email': '<new_email_address>'}";
@@ -136,23 +132,7 @@ putClick(){
     alert("Wrong value for token...");
   }
 }
-changeTextColorRed() {
-  //this.response = "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'Jane', \n'Last Name' : 'Doe', \n'AccountNum' : 'CR21212121212',\n'Account Amount' : '100,000'\n}";
-  const eInput = document.getElementById("email-input");
-  eInput.style.color = "red";
 
-}
-changeTextColorBlack() {
-  this.response="HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'John', \n'Last Name' : 'Smith', \n'AccountNum' : 'CR11111111111',\n'Account Amount' : '6000'\n}";
-  const fnameInput = document.getElementById("fName-input");
-  fnameInput.style.color = "black";
-  const lnameInput = document.getElementById("lName-input");
-  lnameInput.style.color = "black";
-  const accNumInput = document.getElementById("accNum-input");
-  accNumInput.style.color = "black";
-  const accAmoInput = document.getElementById("accAmo-input");
-  accAmoInput.style.color = "black";
-}
 copyMessage(val: string){
   const selBox = document.createElement('textarea');
   selBox.style.position = 'fixed';
@@ -173,4 +153,4 @@ copyMessage(val: string){
   }
 
 }
-//quitar botones next, etc cuando tienen qhacer algo en lesson 2 y 3. mostrar resultado de ataque en lesson3 (acc settings page), lesson4
+//quitar labels extra y el boton de inspect (o dejar para ver respuesta)... lesson4 + ejemplo
