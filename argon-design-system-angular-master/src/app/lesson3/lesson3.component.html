@@ -1,145 +1,231 @@
-
 <div class="row justify-content-start m-2">
+  <div class="col-3 card bg-default p-3">
+    <div class="card-body">
+      <h2 class="card-title text-center text-light font-weight-bold">
+        Broken Authentication
+      </h2>
+      <blockquote class="blockquote text-start">
+        <p class="card-test text-light">{{ msg }}</p>
 
-    <div class="col-3 card bg-default p-3">
-     <div class="card-body">
-         <h2 class="card-title text-center text-light font-weight-bold">Broken Authentication</h2>
-         <blockquote class="blockquote text-start">
-           <p class="card-test text-light">{{msg}}</p>
-           <div *ngIf="showResp" class="bg-light text-dark mt-2">
-            <code class="text-dark"> {{response}} </code>
+        <!-- aqui va cmd-->
+        <div *ngIf="showResp" class="terminal space shadow">
+          <div class="top">
+            <div class="btns">
+              <span class="circle red"></span>
+              <span class="circle yellow"></span>
+              <span class="circle green"></span>
+            </div>
+            <div class="title">Response</div>
           </div>
-           <div *ngIf="showCopy" class="text-center">
-           <button class="btn btn-warning"  (click)="copyMessage('1b1h34jkn7io7oi51lk34k')" value="Copy" >Copy Token <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-fill" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2"/>
-          </svg></button>
-        </div> <!-- icono tomado de pagina de doc de bootstrap-->
-         </blockquote>
-        <div class="text-center">
-          <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">Back</button>
-           <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">Next</button>
-           <a href="#/lesson4"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
-         </div>
-        <!--<button (click)="nextStep()" type="button" class="btn btn-primary">Next</button>--> 
-     </div>
-     </div>
-    
-     <div class="browser-box">
-      <div class="col- mr-5">
-          
-              <div class="fake-browser" [attr.disabled]="isDisabled ? true : null" >
-                <header class="fake-browser-header">
-                  <div class="action-btns">
-                    <span></span>
-                    <span></span> <span></span>
-                  </div>
-                  <div class="address-bar">
-                    <input type="text" value="https://api.its.cr"/>
-                  </div>
-                  <div class="setting-more">
-                    <span class="more-btn"></span>
-                  </div>
-                </header>
-                <section class="fake-window-body bg-white">
-                  <div *ngIf="!showResult" class="p-5 text-center justify-content-center">
-                    <h3 class="mb-4">API Testing Tool</h3>
-                    
-                      
-                          <div class="col-lg-12">
-                            <label class="font-weight-bold" disabled>URL</label>
-                              <div class="input-group">
-                                
-                                <input type="text" class="form-control text-center text-body" id="first_name" placeholder="https://www.itsapi.com/login/changepassword" readonly >
-                              
-                                <div class="input-group-append">
-                                  <button class="btn btn-warning" id="putBtn" (click)="putClick()">PUT</button>
-                                </div>
-                              </div>
-                             
-                          </div>
-                          <div class="col-lg-12 mb-2">
-                            <div class="col text-center">
-                              
-                              <div class="row">
-                                <div class="col">
-                                  <label class="font-weight-bold" disabled>Email</label>
-                                  <input type="text" class="form-control text-body" id="email-input" placeholder="bad.actor@itsmail.com" readonly>
-                                </div>
-                                <div class="col">
-                                  <label class="font-weight-bold" disabled>Auth Token</label>
-                                  <input type="text" class="form-control text-body" id="token-input" placeholder="Please type Auth. Token Here">
-                                </div>
-                              </div>
-                               
-                                
-                           </div>
-                        </div>
-                          
-                         <div class="resp-box">
-                          <label class="font-weight-bold" disabled>Response</label>
-                        
-                        <!-- -->
-                      </div>
-                  </div> <!-- FIN DE PRIMER PANTALLA, LA IDEA ES QUE CON EL BOOLEAN CAMBIE A LA DE RESULTADO-->
-                  
-                  <div *ngIf="showResult" class="p-5 text-center justify-content-center">
+          <p class="body">
+        {{ response }}
+            </p>
+        </div>
+        <!-- fin de cmd-->
 
-                    <div class="p-5 text-center justify-content-center">
-                      <h2 class="mb-2">ITS e-commerce</h2>
-                      <form>
-                       <label class="h3 mb-2">Account Settings</label>
-                       <div class="row mb-3">
-                         <div class="col">
-                           <label>Account Email</label>
-                           <input type="text" id="email-input" class="form-control" value={{emailInput}} readonly>
-                         </div>
-                         <div class="col">
-                           <label>User Full Name</label>
-                           <input type="text" id="lName-input" class="form-control" value='Administrator Account' readonly>
-                         </div>
-   
-                       </div>
-                       <div class="row mb-3">
-                         <div class="col text-red">
-                           <label>Shipping Address</label>
-                           <input type="text" id="accNum-input" class="form-control" value="1111 Fake Street, 78023, TX, USA" readonly>
-                         </div>
-                         <div class="col">
-                           <label>Account Amount</label>
-                           <input type="text" id="accAmo-input" class="form-control" value='$2,680,000' readonly>
-                         </div>
-   
-                       </div>
-                       
-                      </form>
-                        
-                      <div class="text-center"> <!-- si se quiere meter al form group para q agarre horizontal agregue a esta clase row + margin y metalo al form-->
-                       <div class="col mb-2 mt-2">
-                         <!-- <button class="btn btn-primary">View Account History</button> -->
-                         <div class="text-center">
-                           <button *ngIf="showIns" (click)="respShow()" class="btn btn-warning">Inspect</button>
-                           <div class="resp-json-box w-0">
-                             <code *ngIf="showResp" class="text-default"> {{response}}</code>
-                           </div>
-                         </div>
-                         
-                       </div>
-                       
-                      
-                     </div>  
-                       
-                       
-                    </div>
-                  </div> <!-- aqui termina segunda pantalla...-->
+        <div *ngIf="showCopy" class="text-center">
+          <button
+            class="btn btn-warning"
+            (click)="copyMessage('1b1h34jkn7io7oi51lk34k')"
+            value="Copy"
+          >
+            Copy Token
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-clipboard-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- icono tomado de pagina de doc de bootstrap-->
+      </blockquote>
+      <div class="text-center">
+        <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">
+          Back
+        </button>
+        <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">
+          Next
+        </button>
+        <a href="#/lesson4"
+          ><button *ngIf="showNextLesson" class="btn btn-warning">
+            Next Lesson
+          </button></a
+        >
+      </div>
+      <!--<button (click)="nextStep()" type="button" class="btn btn-primary">Next</button>-->
+    </div>
+  </div>
 
-                </section>
+  <div class="browser-box">
+    <div class="col- mr-5">
+      <div class="fake-browser" [attr.disabled]="isDisabled ? true : null">
+        <header class="fake-browser-header">
+          <div class="action-btns">
+            <span></span>
+            <span></span> <span></span>
+          </div>
+          <div class="address-bar">
+            <input type="text" value="https://api.its.cr" />
+          </div>
+          <div class="setting-more">
+            <span class="more-btn"></span>
+          </div>
+        </header>
+        <section class="fake-window-body bg-white">
+          <div
+            *ngIf="!showResult"
+            class="p-5 text-center justify-content-center"
+          >
+            <h3 class="mb-4">API Testing Tool</h3>
+
+            <div class="col-lg-12">
+              <label class="font-weight-bold" disabled>URL</label>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control text-center text-body"
+                  id="first_name"
+                  placeholder="https://www.itsapi.com/login/changepassword"
+                  readonly
+                />
+
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-warning"
+                    id="putBtn"
+                    (click)="putClick()"
+                  >
+                    PUT
+                  </button>
+                </div>
               </div>
             </div>
-      
+            <div class="col-lg-12 mb-2">
+              <div class="col text-center">
+                <div class="row mt-2">
+                  <div class="col">
+                    <label class="font-weight-bold" disabled>Email</label>
+                    <input
+                      type="text"
+                      class="form-control text-body"
+                      id="email-input"
+                      placeholder="bad.actor@itsmail.com"
+                      readonly
+                    />
+                  </div>
+                  <div class="col">
+                    <label class="font-weight-bold" disabled>Auth Token</label>
+                    <input
+                      type="text"
+                      class="form-control text-body"
+                      id="token-input"
+                      placeholder="Please type Auth. Token Here"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="resp-box">
+              <label class="font-weight-bold" disabled>Response</label>
+
+              <!-- -->
+            </div>
+          </div>
+          <!-- FIN DE PRIMER PANTALLA, LA IDEA ES QUE CON EL BOOLEAN CAMBIE A LA DE RESULTADO-->
+
+          <div
+            *ngIf="showResult"
+            class="p-5 text-center justify-content-center"
+          >
+            <div class="p-5 text-center justify-content-center">
+              <h2 class="mb-2">ITS e-commerce</h2>
+              <form>
+                <label class="h3 mb-2">Account Settings</label>
+                <div class="row mb-3">
+                  <div class="col">
+                    <label>Account Email</label>
+                    <input
+                      type="text"
+                      id="email-input"
+                      class="form-control"
+                      value="{{ emailInput }}"
+                      readonly
+                    />
+                  </div>
+                  <div class="col">
+                    <label>User Full Name</label>
+                    <input
+                      type="text"
+                      id="lName-input"
+                      class="form-control"
+                      value="Administrator Account"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col text-red">
+                    <label>Shipping Address</label>
+                    <input
+                      type="text"
+                      id="accNum-input"
+                      class="form-control"
+                      value="1111 Fake Street, 78023, TX, USA"
+                      readonly
+                    />
+                  </div>
+                  <div class="col">
+                    <label>Account Amount</label>
+                    <input
+                      type="text"
+                      id="accAmo-input"
+                      class="form-control"
+                      value="$2,680,000"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </form>
+
+              <div class="text-center">
+                <!-- si se quiere meter al form group para q agarre horizontal agregue a esta clase row + margin y metalo al form-->
+                <div class="col mb-2 mt-2">
+                  <!-- <button class="btn btn-primary">View Account History</button> -->
+                  <div class="text-center">
+                    <button
+                      *ngIf="showIns"
+                      (click)="respShow()"
+                      class="btn btn-warning"
+                    >
+                      Inspect
+                    </button>
+                    <div class="resp-json-box w-0">
+                      <code *ngIf="showResp" class="text-default">
+                        {{ response }}</code
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- aqui termina segunda pantalla...-->
+        </section>
+      </div>
     </div>
-   </div>
-   
-   <!--
+  </div>
+</div>
+
+<!--
     <div class="form-inline">
                              <div class="form-group mb-1">
                                <label class="font-weight-bold" disabled>URL</label>

@@ -153,4 +153,4 @@ copyMessage(val: string){
   }
 
 }
-//quitar labels extra y el boton de inspect (o dejar para ver respuesta)... lesson4 + ejemplo
+//agregue info de token en segunda pantalla de rquests.
