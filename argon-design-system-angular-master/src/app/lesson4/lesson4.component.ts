@@ -22,14 +22,14 @@ accAmo = "";
 color = "black-50";
 isDisabled = true;
 response =
-  "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'John', \n'Last Name' : 'Smith', \n'AccountNum' : 'CR11111111111',\n'Account Amount' : '6000'\n}";
+  "{ \n'username' : 'John.Smith', \n'UserID' : '05235', \n'tip_amount' : '1', \n'user_email' : 'john.smith@itsmail.com'\n}";
 
 changeMsg() {
   switch (this.pagenum) {
     case (this.pagenum = 0): {
       this.showNext = true;
       this.msg =
-        "Welcome to the thirn vulnerability we will be learning about. Broken Object Level Property Authorization.\n\n Click next and follow the steps.";
+        "Welcome to the third vulnerability we will be learning about. Broken Object Level Property Authorization.\n\n Click next and follow the steps.";
       this.showIns = false;
       break;
     }
@@ -40,48 +40,39 @@ changeMsg() {
     }
     case (this.pagenum = 2): {
       this.msg =
-        "OWASP defines a Broken Object Level Authorization (or BOLA) vulnerability as failures in this mechanism that typically lead to unauthorized information disclosure, modification, or destruction of all data.";
+        "An API with this type of vulnerability might over expose some sensitive information which can lead to the API being compromised, an attacker being able to view sensitive information, users accessing admin functions and/or in more extreme cases, taking over other users account. \n\nGenerally, attacker use fuzzing or similar techniques to find additional hidden properties of objects; so just hiding them won't work!";
       break;
     }
     case (this.pagenum = 3): {
       this.msg =
-        "As an example of this we can take an API that is used by a website that utlizes an API to pull user information when accesing and editing their profile.\n\n In this case we can check out our inspect and it will show us that the API uses a structure in their query that follows api/users/[ID].\n\nIf a BOLA vulnerability is present, and no verification of that the user making the call has permission to view the information called; then the attacker will be able to view the settings and information of any user by sending a GET request with another ID of his choice.";
-      this.showIns = false;
+        "For an example of a case in which this vulnerability exists, we can think of a casino platform with a player tipping function in which any user can send funds to other as a 'tip' through a POST call of an API. If this vulnerability would be present and all information about the player tipped is exposed, then whoever sends the fund could look at the response from the API and figure out valuable information such as userID, email, and other details like those.";
+      
       break;
     }
     case (this.pagenum = 4): {
       this.msg =
-        "TRY IT!\n\n Click the inspect button in the browser to see the JSON object that is being pulled when accessing the user settings.\n\n In this case it calls to our api using the GET method towards api/user/[userID]";
+        "TRY IT!\n\n Send a Tip to our example user whose username is John.Smith and then peek at the response using the inspect button in the browser.";
+      this.showIns = false;
       this.isDisabled = false;
       this.showNext = false;
       this.showPrev = false;
-      this.showIns = true;
       break;
     }
     case (this.pagenum = 5): {
-      this.showResp = false;
-      this.showNext = false;
-      this.showPrev = false;
+      this.showResp = true;
       this.msg =
-        "With any program to test APIs, (for example, POSTMAN) we can try and call to the API using another user ID; try it again with the Inspect button in the browser and notice the changes in red.\n\n In this case since there is no verification that the user making the API call is actually logged into the user they are searching, then it will let said user request information by using any other user's ID.";
+        "In our response we can see that it contains different properties such as email and userID. If other vulnerabilities are present an attacker could use this information to cause a larger impact on their attack.\n\n In this case, we only have over exposed properties on our objects, but this vulnerability could be even more dangerous if certain functions in the companie's API did not implement proper access control to function and object's properties.";
       break;
     }
     case (this.pagenum = 6): {
       this.msg =
-        "There are different ways to help fix this type of Vulnerability.\n\n A posible way that it can be mitigated can be through the use of UUIDs instead of a manually set or structured way to set ID. A UUID is an ID that is randomly generated with no specific pattern. This can make it much more difficult for attackers to identify other users ID.\n Another important step a developer must take to ensure that only authorized users can see their information is to validate that whoever is making the API call has permission to view the object before sending the API call.";
+        "To mitigate the chances of having this type of vulnerability OWASP recommends:\n\n- When exposing objects in API endpoints, double check what a user's access to the object's properties are. \n- Avoid using generic methods (like to_json() or to_string()) to avoid exposing all of the object's properties. Instead use created methods that return a specific object or object properties.\n- Allow changes only to the object's properties that should be updated by the clinet.\n- Keep returned data structure to the bare minimum based on the businesses requirements.\n- Optionally, implement a schema-based response validation mechanism as an extra leter of security. (A mechanism that will define and enfore data return by API methods.)";
 
       break;
     }
     case (this.pagenum = 7): {
       this.msg =
-        "Keep in mind that when testing an API's security for this type of vulnerability it is important to Identify session labels (what is used by the API to identify the logged-in user.), then send API requests using different user's session labels to make sure only the information the user has permission to view is opened. If not the vulnerability still exists.";
-      //this.showResp = true;
-
-      break;
-    }
-    case (this.pagenum = 8): {
-      this.msg =
-        "In conclusion, BOLA is a vulnerability that is present when an API's GET call can be misused to view information you should not have access to. This can be due to predicatable and easy to guess IDs, and a bad (or non) implementation of access control to sensitive data.\n\nSome ways we can fix this can be through implementation of randomized ID with no pattern, access controls and checks for sensitive information, and authorization check when APIs are called.";
+        "In conclusion, it is essential that there is a validation mechanism when a user accesses an object through the use of an API. Not doing so can result in data loss or corruption, unauthorized access to sensitive information, and in some cases can lead to privilege escalation or account takeover.";
       this.showNextLesson = true;
       //this.showResp = true;
       this.showNext = false;
@@ -103,26 +94,14 @@ prevMsg() {
   }
 }
 
+showInspect(){
+  this.showIns = true;
+}
+
 respShow() {
-  if (this.pagenum < 5) {
-    this.changeTextColorBlack();
     this.showResp = !this.showResp;
     this.showNext = true;
     this.showPrev = true;
-    this.fName = "John";
-    this.lName = "Smith";
-    this.accNum = "CR11111111111";
-    this.accAmo = "$6000";
-  } else if (this.pagenum > 4) {
-    this.changeTextColorRed();
-    this.showResp = !this.showResp;
-    this.showNext = true;
-    this.showPrev = true;
-    this.fName = "Jane";
-    this.lName = "Doe";
-    this.accNum = "CR21212121212";
-    this.accAmo = "$100,000";
-  }
 }
 
 changeTextColorRed() {

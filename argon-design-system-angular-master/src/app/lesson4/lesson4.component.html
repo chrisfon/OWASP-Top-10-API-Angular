@@ -25,7 +25,7 @@
                    <span></span> <span></span>
                  </div>
                  <div class="address-bar">
-                   <input type="text" value="https://api.its.cr"/>
+                   <input type="text" value="https://casino.itscr.com"/>
                  </div>
                  <div class="setting-more">
                    <span class="more-btn"></span>
@@ -36,7 +36,7 @@
               <!-- Inicio DE NAVBAR-->
                
                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand ml-1" href="#">ITS Fake Bank</a>
+                <a class="navbar-brand ml-1" href="#">ITS Very Real Casino</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -75,38 +75,35 @@
 
                <section class="fake-window-body bg-white">
                  <div class="p-5 text-center justify-content-center">
-                   <h2 class="mb-2">ITS Fake Bank</h2>
+                   <h2 class="mb-2">ITS Very Real Casino</h2>
                    <form>
-                    <label class="h3 mb-2">Account Settings</label>
-                    <div class="row mb-3">
-                      <div class="col">
-                        <label>First Name</label>
-                        <input type="text" id="fName-input" class="form-control" value={{fName}} readonly>
-                      </div>
-                      <div class="col">
-                        <label>Last Name</label>
-                        <input type="text" id="lName-input" class="form-control" value={{lName}} readonly>
-                      </div>
-
-                    </div>
+                    <label class="h3 mb-2">Tip another Player</label>
+                    
                     <div class="row mb-3">
                       <div class="col text-{{color}}">
-                        <label>Account Num.</label>
-                        <input type="text" id="accNum-input" class="form-control" value={{accNum}} readonly>
+                        <label>Account Name</label>
+                        <input type="text" id="accNum-input" class="form-control" value="John.Smith" readonly>
                       </div>
                       <div class="col">
-                        <label>Account Amount</label>
-                        <input type="text" id="accAmo-input" class="form-control" value={{accAmo}} readonly>
+                        <label>Tip Amount</label>
+                        <input type="text" id="accAmo-input" class="form-control" value="$1" readonly>
                       </div>
 
                     </div>
-                    
+                    <div class="text-center">
+                      <button (click)="showInspect()" class="btn btn-warning">Tip</button>
+                      
+                    </div>
+                    <div *ngIf="showIns" class="text-center">
+                      <label class="text-success">Tip sent successfully!</label>
+                    </div>
                    </form>
                      
                    <div class="text-center"> <!-- si se quiere meter al form group para q agarre horizontal agregue a esta clase row + margin y metalo al form-->
                     <div class="col mb-2 mt-2">
                       <!-- <button class="btn btn-primary">View Account History</button> -->
                       <div class="text-center">
+                        
                         <button *ngIf="showIns" (click)="respShow()" class="btn btn-warning">Inspect</button>
                         <div class="resp-json-box w-0">
                           <code *ngIf="showResp" class="text-default"> {{response}}</code>

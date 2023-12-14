@@ -27,7 +27,7 @@
                   <span></span> <span></span>
                 </div>
                 <div class="address-bar">
-                  <input type="text" value="https://api.its.cr"/>
+                  <input type="text" value="https://api.open-meteo.com"/>
                 </div>
                 <div class="setting-more">
                   <span class="more-btn"></span>
@@ -48,13 +48,27 @@
                         <button class="btn btn-primary" (click)="respShow()">Go</button>
                         
                         </div>
-                       <div class="resp-box">
-                        <label class="font-weight-bold" disabled>Response</label>
-                      <div *ngIf="showResp" class="resp-json-box">
-                        <code class="text-default"> {{response}} </code>
-                      </div>
-                      <!-- -->
-                    </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="resp-box text-end">
+                              <label class="font-weight-bold" disabled>Request</label>
+                            <div *ngIf="showResp" class="resp-json-box">
+                              <code class="text-default"> {{request}} </code>
+                            </div>
+                            <!-- -->
+                          </div>
+                          </div>
+                          <div class="col">
+                            <div class="resp-box text-end">
+                              <label class="font-weight-bold" disabled>Response</label>
+                            <div *ngIf="showResp" class="resp-json-box">
+                              <code class="text-default"> {{response}} </code>
+                            </div>
+                            <!-- -->
+                          </div>
+                          </div>
+                        </div>
+                       
                 </div>
                 
               </section>
