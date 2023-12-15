@@ -6,9 +6,10 @@
       </h2>
       <blockquote class="blockquote text-start">
         <p class="card-test text-light">{{ msg }}</p>
-
+        
+        <br/>
         <!-- aqui va cmd-->
-        <div *ngIf="showResp" class="terminal space shadow">
+        <div *ngIf="showResp" class="terminal">
           <div class="top">
             <div class="btns">
               <span class="circle red"></span>
@@ -23,49 +24,44 @@
         </div>
         <!-- fin de cmd-->
 
-        <div *ngIf="showCopy" class="text-center">
-          <button
-            class="btn btn-warning"
-            (click)="copyMessage('1b1h34jkn7io7oi51lk34k')"
-            value="Copy"
-          >
-            Copy Token
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-clipboard-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2"
-              />
-            </svg>
-          </button>
-        </div>
+        
         <!-- icono tomado de pagina de doc de bootstrap-->
       </blockquote>
-      <div class="text-center">
-        <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">
-          Back
-        </button>
-        <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">
-          Next
-        </button>
-        <a href="#/lesson4"
-          ><button *ngIf="showNextLesson" class="btn btn-warning">
-            Next Lesson
-          </button></a
-        >
-      </div>
+      
       <!--<button (click)="nextStep()" type="button" class="btn btn-primary">Next</button>-->
     </div>
+    <div class="text-right">
+      <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">Back</button>
+        <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">Next</button>
+        
+      <a href="#/lesson2"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
+      <div *ngIf="showCopy" class="text-center">
+        <button
+          class="btn btn-warning"
+          (click)="copyMessage('1b1h34jkn7io7oi51lk34k')"
+          value="Copy"
+        >
+          Copy Token
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-clipboard-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2"
+            />
+          </svg>
+        </button>
+      </div>
+      </div>
   </div>
 
-  <div class="browser-box">
-    <div class="col- mr-5">
+  <div class="browser-box col-9">
+    
       <div class="fake-browser" [attr.disabled]="isDisabled ? true : null">
         <header class="fake-browser-header">
           <div class="action-btns">
@@ -221,7 +217,7 @@
           <!-- aqui termina segunda pantalla...-->
         </section>
       </div>
-    </div>
+    
   </div>
 </div>
 

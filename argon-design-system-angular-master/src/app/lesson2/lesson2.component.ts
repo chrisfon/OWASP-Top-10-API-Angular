@@ -85,7 +85,7 @@ export class Lesson2Component implements OnInit {
         this.showNextLesson = true;
         //this.showResp = true;
         this.showNext = false;
-        this.showPrev = false;
+        //this.showPrev = false;
         break;
       }
     }

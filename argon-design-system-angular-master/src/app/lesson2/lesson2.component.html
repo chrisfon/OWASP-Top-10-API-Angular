@@ -6,17 +6,19 @@
          <blockquote class="blockquote text-start">
            <p class="card-test text-light">{{msg}}</p>
          </blockquote>
-        <div class="text-center">
-          <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">Back</button>
-           <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">Next</button>
-           <a href="#/lesson3"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
-         </div>
+        
         <!--<button (click)="nextStep()" type="button" class="btn btn-primary">Next</button>--> 
      </div>
+     <div class="text-right">
+      <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">Back</button>
+        <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">Next</button>
+        
+      <a href="#/lesson2"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
+      </div>
      </div>
  
-     <div class="browser-box">
-     <div class="col- mr-5">
+     <div class="col-9 browser-box">
+     
          
              <div class="fake-browser" [attr.disabled]="isDisabled ? true : null">
                <header class="fake-browser-header">
@@ -36,7 +38,7 @@
               <!-- Inicio DE NAVBAR-->
                
                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand ml-1" href="#">ITS Fake Bank</a>
+                <a class="navbar-brand ml-3" href="#">ITS Fake Bank</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -123,7 +125,7 @@
                  
                </section>
              </div>
-           </div>
+           
      
    </div>
    </div>

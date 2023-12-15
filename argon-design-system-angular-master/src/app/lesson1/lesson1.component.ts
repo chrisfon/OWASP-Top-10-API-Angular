@@ -58,7 +58,7 @@ export class Lesson1Component implements OnInit {
         this.msg="Throughout the lessons provided we will learn about the most common vulnerabilities and recommendations for how to deal with these vulnerablitiles based on the OWASP Security Framework.";
         this.showResp = true; 
         this.showNext = false;
-        this.showPrev = false;
+        //this.showPrev = false;
         this.showNextLesson = true;
         break;
           }

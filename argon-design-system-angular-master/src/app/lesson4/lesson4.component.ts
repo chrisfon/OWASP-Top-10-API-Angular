@@ -76,7 +76,7 @@ changeMsg() {
       this.showNextLesson = true;
       //this.showResp = true;
       this.showNext = false;
-      this.showPrev = false;
+      //this.showPrev = false;
       break;
     }
   }

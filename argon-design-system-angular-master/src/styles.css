@@ -24,6 +24,10 @@ code{
 input{
     font-size: 18px !important;
   }
+
+.content-heigh{
+  height: 90vh;
+}
 .resp-json-box{
     text-align: left;
     /* background-color: #e9ecef; */
@@ -37,19 +41,20 @@ input{
   }
   
 .browser-box{
-    background-color: #172b4d;
-    width:73.8vw;
-    height:43.5vw;
-    margin-left:8px;
+    /*background-color: #172b4d;*/
+    /*width:73.8vw;*/
+    /*height:43.5vw;*/
+    /*margin-left:8px;
     justify-content: start;
-    border-radius: 5px;
+    border-radius: 5px;*/
+    margin-top: 2px;
   }
   
 .fake-browser {
       font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       justify-content: center;
-      width: 73vw; /*viewport width */
-      height: 42.5vw;
+      /*width: 73vw; /*viewport width */
+      height: 91vh;
       /*
       height: 100%;
       border: 0.5px solid black;
@@ -58,7 +63,8 @@ input{
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      margin: 8px;
+      /*padding: 18px;*/
+      /*margin: 8px;
       /* 
       box-shadow: 0 0px 20px rgb(83, 83, 83);
       margin-left: 0.5%;
