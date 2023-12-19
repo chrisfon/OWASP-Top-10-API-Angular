@@ -66,11 +66,18 @@ changeMsg() {
     }
     case (this.pagenum = 6): {
       this.msg =
-        "To mitigate the chances of having this type of vulnerability OWASP recommends:\n\n- When exposing objects in API endpoints, double check what a user's access to the object's properties are. \n- Avoid using generic methods (like to_json() or to_string()) to avoid exposing all of the object's properties. Instead use created methods that return a specific object or object properties.\n- Allow changes only to the object's properties that should be updated by the client.\n- Keep returned data structure to the bare minimum based on the businesses requirements.\n- Optionally, implement a schema-based response validation mechanism as an extra leter of security. (A mechanism that will define and enfore data return by API methods.)";
+        "To mitigate the chances of having this type of vulnerability OWASP recommends:\n\n- When exposing objects in API endpoints, double check what a user's access to the object's properties are. \n- Avoid using generic methods (like to_json() or to_string()) to avoid exposing all of the object's properties. Instead use created methods that return a specific object or object properties.\n\nContinued next page...";
 
       break;
     }
+    //\n- Keep returned data structure to the bare minimum based on the businesses requirements.\n- Optionally, implement a schema-based response validation mechanism as an extra leter of security. (A mechanism that will define and enfore data return by API methods.)
     case (this.pagenum = 7): {
+      this.msg =
+        "- Keep returned data structure to the bare minimum based on the businesses requirements.\n- Allow changes only to the object's properties that should be updated by the client.\n- Optionally, implement a schema-based response validation mechanism as an extra leter of security. (A mechanism that will define and enfore data return by API methods.)";
+        
+      break;
+    }
+    case (this.pagenum = 8): {
       this.msg =
         "In conclusion, it is essential that there is a validation mechanism when a user accesses an object through the use of an API. Not doing so can result in data loss or corruption, unauthorized access to sensitive information, and in some cases can lead to privilege escalation or account takeover.";
       this.showNextLesson = true;

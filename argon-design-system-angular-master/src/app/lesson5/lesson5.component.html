@@ -2,7 +2,7 @@
 
     <div class="col-3 card bg-default p-3">
      <div class="card-body">
-         <h2 class="card-title text-center text-light font-weight-bold">Broken Object Level Authorization</h2>
+         <h2 class="card-title text-center text-light font-weight-bold">Unrestricted Resource Consumption</h2>
          <blockquote class="blockquote text-start">
            <p class="card-test text-light">{{msg}}</p>
          </blockquote>
@@ -13,14 +13,14 @@
       <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">Back</button>
         <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">Next</button>
         
-      <a href="#/lesson2"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
+      <a href="#/lesson6"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
       </div>
      </div>
  
      <div class="col-9 browser-box">
      
          
-             <div class="fake-browser" [attr.disabled]="isDisabled ? true : null">
+             <div *ngIf="!showLogin" class="fake-browser" [attr.disabled]="isDisabled ? true : null">
                <header class="fake-browser-header">
                  <div class="action-btns">
                    <span></span>
@@ -38,7 +38,7 @@
               <!-- Inicio DE NAVBAR-->
                
                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand ml-1" href="#">ITS Fake Bank</a>
+                <a class="navbar-brand ml-1" href="#">ITS Fake Store</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -82,7 +82,7 @@
                     <label class="h3 mb-2">Forgot your password</label>
                     
                     <div class="col">
-                      <input type="text" class="form-control text-center text-body" id="user_name" placeholder="Type your email here...">
+                      <input type="text" class="form-control text-center text-body" id="user_name" placeholder="bad.actor@itsmail.com" readonly>
                     </div>
                     
                     
@@ -115,14 +115,8 @@
                  
                </section>
              </div>
-           
-     
-   </div>
-   <!-- FIN DE PRIMER PANTALLA Q CAMBIARA CON E L BOOLEAN PARA HACER EFECTO DE LOGIN E IR A FORGOT PASSWORD-->
-   <div class="browser-box">
-    <div class="col- mr-5">
-        
-            <div class="fake-browser" [attr.disabled]="isDisabled ? true : null">
+             <!-- INICIO SEGUNDA PANTALLA-->
+             <div class="fake-browser" *ngIf="showLogin" [attr.disabled]="isDisabled ? true : null">
               <header class="fake-browser-header">
                 <div class="action-btns">
                   <span></span>
@@ -140,7 +134,7 @@
              <!-- Inicio DE NAVBAR-->
               
               <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand ml-1" href="#">ITS Fake Bank</a>
+               <a class="navbar-brand ml-1" href="#">ITS Fake Store</a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                  <span class="navbar-toggler-icon"></span>
                </button>
@@ -181,12 +175,25 @@
                 <div class="p-5 text-center justify-content-center">
                   <h2 class="mb-2">ITS Fake Store</h2>
                   <form>
-                   <label class="h3 mb-2">Forgot your password</label>
+                   
                    
                    <div class="col">
-                     <input type="text" class="form-control text-center text-body" id="user_name" placeholder="Type your email here...">
+                    <label>E-mail</label>
+                     <input type="text" class="form-control text-center text-body" id="user_name" placeholder="Type your email here..." readonly>
+                     <label>Password</label>
+                     <input type="text" class="form-control text-center text-body mb-3" id="user_name" placeholder="Type your password here..." readonly>
                    </div>
-                   
+                   <div class="row">
+                    <div class="col text-center">
+                      <button class="btn btn-warning" type="submit">Login</button>
+                    
+                    </div>
+                    <div class="col">
+                      <button class="btn btn-danger" (click)="forgotPass()" type="submit">Reset Password</button>
+                    
+                    </div>
+
+                   </div>
                    
                   </form>
                   
@@ -195,10 +202,16 @@
                 </div>
                 
               </section>
-            </div>
-          </div>
+            </div>  
+     
+   </div>
+   <!-- FIN DE PRIMER PANTALLA Q CAMBIARA CON E L BOOLEAN PARA HACER EFECTO DE LOGIN E IR A FORGOT PASSWORD-->
+ 
+        
+            
+          
     
-  </div>
+  
   <!--fin de segunda pantalla...-->
    </div>
 
