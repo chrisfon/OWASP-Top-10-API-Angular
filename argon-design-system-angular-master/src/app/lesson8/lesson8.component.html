@@ -2,7 +2,7 @@
 
     <div class="col-3 card bg-default p-3">
      <div class="card-body">
-         <h2 class="card-title text-center text-light font-weight-bold">Unrestrictive Access to business flows</h2>
+         <h2 class="card-title text-center text-light font-weight-bold">What is an API?</h2>
          <blockquote class="blockquote text-start">
            <p class="card-test text-light">{{msg}}</p>
          </blockquote>
@@ -13,7 +13,7 @@
        <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">Back</button>
          <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">Next</button>
          
-       <a href="#/lesson7"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
+       <a href="#/lesson2"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
        </div>
      </div>
  
@@ -27,7 +27,7 @@
                    <span></span> <span></span>
                  </div>
                  <div class="address-bar">
-                   <input type="text" value="https://api.exampleITS.com"/>
+                   <input type="text" value="https://api.open-meteo.com"/>
                  </div>
                  <div class="setting-more">
                    <span class="more-btn"></span>
@@ -35,23 +35,23 @@
                </header>
                <section class="fake-window-body bg-white">
                  <div class="p-5 text-center justify-content-center">
-                   <h3 class="mb-4">Find User</h3>
+                   <h3 class="mb-4">Test an API</h3>
                    
                      
                          <div class="col-lg-12">
                              <div class="form-group mb-4">
-                               <label class="font-weight-bold" disabled>Username</label>
-                               <input type="text" class="form-control text-center text-body" id="first_name" placeholder="John.Smith" readonly>
+                               <label class="font-weight-bold" disabled>URL</label>
+                               <input type="text" class="form-control text-center text-body" id="first_name" placeholder="https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41" readonly>
                             </div>
                          </div>
                          <div class="text-center">
                          <button class="btn btn-primary" (click)="respShow()">Go</button>
-                         <button *ngIf="showIns" class="btn btn-primary" (click)="respShow()">Inspect</button>
+                         
                          </div>
                          <div class="row">
                            <div class="col">
                              <div class="resp-box text-end">
-                               <label class="font-weight-bold" disabled>Legit Request</label>
+                               <label class="font-weight-bold" disabled>Request</label>
                              <div *ngIf="showResp" class="resp-json-box">
                                <code class="text-default"> {{request}} </code>
                              </div>
@@ -60,9 +60,9 @@
                            </div>
                            <div class="col">
                              <div class="resp-box text-end">
-                               <label class="font-weight-bold" disabled>Crafted Request</label>
-                             <div *ngIf="showReq" class="resp-json-box">
-                               <code class="text-danger"> {{response}} </code>
+                               <label class="font-weight-bold" disabled>Response</label>
+                             <div *ngIf="showResp" class="resp-json-box">
+                               <code class="text-default"> {{response}} </code>
                              </div>
                              <!-- -->
                            </div>

@@ -1,0 +1,97 @@
+<div class="row justify-content-start m-2">
+
+    <div class="col-3 card bg-default p-3">
+     <div class="card-body">
+         <h2 class="card-title text-center text-light font-weight-bold">Unrestricted Access to Sensitive Business Flows</h2>
+         <blockquote class="blockquote text-start">
+           <p class="card-test text-light">{{msg}}</p>
+
+           <div *ngIf="showScript" class="terminal">
+            <div class="top">
+              <div class="btns">
+                <span class="circle red"></span>
+                <span class="circle yellow"></span>
+                <span class="circle green"></span>
+              </div>
+              <div class="title">Pseudo-Script Python</div>
+            </div>
+            <p class="body">
+          {{ script }}
+              </p>
+          </div>
+
+         </blockquote>
+        
+        <!--<button (click)="nextStep()" type="button" class="btn btn-primary">Next</button>--> 
+     </div>
+     <div class="text-right">
+       <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">Back</button>
+         <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">Next</button>
+         
+       <a href="#/lesson8"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
+       </div>
+     </div>
+ 
+     <div class="browser-box col-9" [attr.disabled]="isDisabled ? true : null">
+     <div>
+         
+             <div class="fake-browser">
+               <header class="fake-browser-header">
+                 <div class="action-btns">
+                   <span></span>
+                   <span></span> <span></span>
+                 </div>
+                 <div class="address-bar">
+                   <input type="text" value="https://ITSTickets.com/new-year-party"/>
+                 </div>
+                 <div class="setting-more">
+                   <span class="more-btn"></span>
+                 </div>
+               </header>
+               <section class="fake-window-body bg-white">
+                 <div class="p-5 text-center justify-content-center">
+                   <h3 class="mb-4">Ticket Shop</h3>
+                   
+                     
+                         <div class="col-lg-12">
+                             <div class="form-group mb-4">
+                               <h4 class="font-weight-bold" disabled>New Years Event</h4>
+                               <div>
+                                <img class=".img-fluid mb-3" style="width: 300px;" src="https://www.hamaraevent.com/uploads/blog/0832549001497083011.jpg">
+                                <label >Join us for a glamorous New Year’s Eve celebration at the Stardust Ballroom! Dance the night away under twinkling lights, enjoy a midnight champagne toast, and witness a dazzling fireworks display. Dress elegantly and get ready to welcome 2024 in style! 200 tickets available. Limited to two tickets per account.</label>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="text-center">
+                            <label class="font-weight-bold" disabled>$20</label>
+                         </div>
+                         <div class="text-center">
+                            <label class="font-weight-bold" disabled>Tickets Left: {{tickLeft}}</label>
+                         </div>
+                         <button class="btn btn-warning mb-4" (click)="buyTicket()">Reserve now!</button>
+                         <div *ngIf="isScript" class="row align-items-center">
+                           <div class="col">
+                            <button class="btn btn-danger" (click)="scriptTicket()">Run Script</button>
+                             <!-- -->
+                           </div>
+                           
+                           <div class="col">
+                             <div class="resp-box text-end">
+                               <label class="font-weight-bold" disabled>Ticket amount bought</label>
+                             <div>
+                               <label class="font-weight-bold" disabled>{{tickBought}}</label>
+                             </div>
+                             <!-- -->
+                           </div>
+                           </div>
+                           </div>
+                         </div>
+                        
+                
+                 
+               </section>
+             </div>
+           </div>
+     
+   </div>
+   

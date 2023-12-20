@@ -21,6 +21,8 @@ import { Lesson3Component } from './lesson3/lesson3.component';
 import { Lesson4Component } from './lesson4/lesson4.component';
 import { Lesson5Component } from './lesson5/lesson5.component';
 import { Lesson6Component } from './lesson6/lesson6.component';
+import { Lesson7Component } from './lesson7/lesson7.component';
+import { Lesson8Component } from './lesson8/lesson8.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { Lesson6Component } from './lesson6/lesson6.component';
     Lesson3Component,
     Lesson4Component,
     Lesson5Component,
-    Lesson6Component
+    Lesson6Component,
+    Lesson7Component,
+    Lesson8Component
   ],
   imports: [
     BrowserModule,
