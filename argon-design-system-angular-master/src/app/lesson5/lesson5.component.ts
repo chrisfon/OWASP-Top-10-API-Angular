@@ -70,7 +70,7 @@ export class Lesson5Component implements OnInit {
       }
       case (this.pagenum = 6): {
         this.msg = //tests
-          "In conclusion, Unrestricted resource consumption is a tricky but still very serious risk that can affect a company financially and their service/product's availability and performance. It is very important to have a prevention strategy that will include the recommendations given in this lesson.";
+          "In conclusion, Unrestricted resource consumption is a tricky but still very serious risk that can affect a company financially and their service/product's availability and performance. It is very important to have a prevention strategy that will include the recommendations given in this lesson. If you would like to read more on this visit: https://cwe.mitre.org/data/definitions/400.html";
         this.showNext = false;
         this.showNextLesson = true;
         break;

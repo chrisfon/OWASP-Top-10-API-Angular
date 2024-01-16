@@ -67,7 +67,7 @@ export class Lesson7Component implements OnInit {
            break;
            }
      case this.pagenum=7: {
-         this.msg="As mentioned before this vulnerability can be difficult to spot due to it being more logic based and not necessarily an error in best practices, specially in apps that have its different parts developed separately. It's important for any company to plan its mitigation strategy around its business logic and have automated attack in consideration when trying to avoid this kind of vulnerability.\n If you would like to read about a case in which this vulnerability was exploited in ticketmaster you can read more about it here https://www.pcmag.com/news/3-scalpers-fined-for-using-bots-to-scoop-up-tickets-on-ticketmaster";
+         this.msg="As mentioned before this vulnerability can be difficult to spot due to it being more logic based and not necessarily an error in best practices, specially in apps that have its different parts developed separately. It's important for any company to plan its mitigation strategy around its business logic and have automated attack in consideration when trying to avoid this kind of vulnerability.\n If you would like to read about a case in which this vulnerability was exploited to gather health-related information of healthline's clients visit here: https://www.apisec.ai/blog/how-hackers-acquired-patients-personal-data-from-healthline";
          this.showResp = true; 
          this.showNext = false;
          //this.showPrev = false;

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Lesson8Component implements OnInit {
 
-  msg="Welcome to the context lesson. First thing we should know about is what APIs are and how are they used?";
+  msg="Welcome to the seventh lesson on vulnerabilities, Server Side Request Forgery.\nClick Next to continue the lesson...";
   pagenum = 0;
   showNextLesson = false;
   showResp = false;
@@ -23,38 +23,26 @@ export class Lesson8Component implements OnInit {
    
    switch(this.pagenum){
      case this.pagenum=0: {
-       this.msg="Welcome to the context lesson. First thing we should know about is what APIs are and how are they used?"
+       this.msg="Welcome to the seventh lesson on vulnerabilities, Server Side Request Forgery.\nClick Next to continue the lesson..."
        break;
      }
      case this.pagenum=1: {
        this.showNext = true;
-     this.msg="API is an abbreviation for Aplication Programming Interface. They are mechanisms that enable two software components to communicate with eachother using a set of definitions and protocols through HTTP method calls. You can think of them as contracts between two applications, where the contracts defines how they will communicate (protocol) and what they will do (function). It will act as a gateway to access information and data.\n\n We will base our lessons of RESTful APIs.\n RESTFul APIs follow a set of rules and are generally used for APIs that will mainly interact with files, objects and media components.";
+     this.msg="OWASP defines Server Side Request Forgery includes any vulnerability that is present when an API is fetching a remote resource without validating the user-supplied URL. In modern applications it can be common to spot it when the application uses user input for the use of webhooks, file fetching from URLs and URL previews. Exploitation requires attackers to find an API endpoint that accesses a URL based on user input. If exploited, this type of vulnerability can lead to port scanning, sensitive information disclosure (not necesarrily access), using servers as proxies to hide malicious activity and enabling attacker to bypass securtity mechanisms such as firewalls.";
      break;
      }
      case this.pagenum=2: {
-       this.msg="API communicate through the use of HTTP methods. The most common methods are:\n\n-GET: To retrieve data and files from a server. It does not change the state of any resource on the server. It can be used to get a list of information or search for a specific object using a unique identifier.\n-POST: Sends data to the server for processing. It generally is sent in XML or JSON format and does change/update the state of the resources called upon in the server.\nHEAD: Returns metadata about the data accessed, does not return the data by itself. Does not affect any state of any resource in the server.\nContinued next page...";
+       this.msg="To protect and help mitigate against Server Side Request Forgery OWASP recommends:\n\n-Isolate resource fetching mechanisms that get data from remote resources.\n-Use allow lists for resources that need to be downloaded (for example, google drive, Imgur, and other similar providers).\n-Disable HTTP redirections.\n-Validate and Sanitize any client-supplied data.\n-Never send raw responses to clients as to not reveal any uneccesary information that could be used by an attacker.";
        break;
        }
      case this.pagenum=3: {
-       this.msg="PUT: This method replaces or changes a resource in the server. Generally it uses a unique identifier to know which resource to change. If it tries to change a rouse that does not exist it will create a new resource. It commonly uses JSON and XML formats.\nDELETE: This method removes a resource from the server. It generally uses a unique identifier to know which resource to delete. It changes the state of resources on the server.";
+       this.msg="An attack of this kind occurs when an attacker successfully maniupulated and endpoint to make the targeted server perform unintended requests that can give the attacker valuable information or enable him to bypass security mechanisms for further attacks.\nGenerally, this type of attack exploits the fact there is trust in the servers running the API so if an attacker can 'trick' it into making his own custom requests, it can access internal or external resources from that server. An attacker can use external resources to help inject or excecute code, and/or redirect to malicious sites; it can use access to internal resources because by using a trust server it will most likely bypass any type of access control that is present.";
        
          break;
          }
-     case this.pagenum=4: {
-         this.msg="Most RESTful APIs will accept and return data in a JSON or XML format which we then can change with a programming language to proces the data however a developer would like. In some cases it can return data in plain text, HTML, or YAML.\n\n Try it in the example window to see how a JSON file request and response would look like and continue";
-         this.isDisabled = false; 
-         break;
-           }
-     case this.pagenum=5: {
-         this.msg="An example of usages of API can be something as simple as calling to a weather API (with GET and some IDs in this case) that will return current weather conditions of specified latitud and longitud (included in the address)";
-         break;
-         }
-     case this.pagenum=6: {
-         this.msg="Although APIs have a great upside of providing tons of utility it can also represent a security risk for any company that develops and/or consumes one. It is important that any developer follows the best security practices when making or consuming an API because it can lead to incidents such as data leaks, loss of trust in the company and loss of integrity in data.\n A solution that will help mitigate some of these issues can be the use of a Secutiy Framework that will provide a guide to help avoid having vulnerabilities and follow the most secure practices when developing an API.";
-           break;
-           }
-     case this.pagenum=7: {
-         this.msg="Throughout the lessons provided we will learn about the most common vulnerabilities and recommendations for how to deal with these vulnerablitiles based on the OWASP Security Framework.";
+         
+         case this.pagenum=4: {
+         this.msg="In conclusion, having little to no trust in user input is very important for URL based resources. It is key for better security to always monitor API behaviour specaially when accessing external resources, monitoring can lead to a faster response and help mitigate the effects of this vulnerability. ";
          this.showResp = true; 
          this.showNext = false;
          //this.showPrev = false;

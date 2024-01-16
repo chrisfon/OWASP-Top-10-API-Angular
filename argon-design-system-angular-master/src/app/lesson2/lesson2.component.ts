@@ -81,7 +81,7 @@ export class Lesson2Component implements OnInit {
       }
       case (this.pagenum = 8): {
         this.msg =
-          "In conclusion, BOLA is a vulnerability that is present when an API's GET call can be misused to view information you should not have access to. This can be due to predicatable and easy to guess IDs, and a bad (or non) implementation of access control to sensitive data.\n\nSome ways we can fix this can be through implementation of randomized ID with no pattern, access controls and checks for sensitive information, and authorization check when APIs are called.";
+          "In conclusion, BOLA is a vulnerability that is present when an API's GET call can be misused to view information you should not have access to. This can be due to predicatable and easy to guess IDs, and a bad (or non) implementation of access control to sensitive data.\n\nSome ways we can fix this can be through implementation of randomized ID with no pattern, access controls and checks for sensitive information, and authorization check when APIs are called.\nTo read more on how a BOLA vulnerability lead to one of the largest hacks in history on USPS visit: https://www.apisec.ai/blog/5-real-world-examples-of-business-logic-vulnerabilities-that-resulted-in-data-breaches";
         this.showNextLesson = true;
         //this.showResp = true;
         this.showNext = false;

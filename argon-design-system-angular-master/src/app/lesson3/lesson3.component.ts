@@ -95,7 +95,7 @@ export class Lesson3Component implements OnInit {
       }
       case (this.pagenum = 9): {
         this.msg =
-          "In conclusion, Broken Authentication is a very important vulnerability to understand because it can have a huge impact on any business or project. It's crucial we follow the best practices and standards when it comes to using an API to authenticate users. ";
+          "In conclusion, Broken Authentication is a very important vulnerability to understand because it can have a huge impact on any business or project. It's crucial we follow the best practices and standards when it comes to using an API to authenticate users.\nTo read more on how a MFA misconfiguration lead to a 70TB data leak from a social media platform called Parler, visit: https://salt.security/blog/unpacking-the-parler-data-breach? ";
         this.showNextLesson = true;
         //this.showResp = true;
         this.showNext = false;
