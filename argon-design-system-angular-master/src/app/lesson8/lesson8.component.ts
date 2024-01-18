@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Lesson8Component implements OnInit {
 
-  msg="Welcome to the seventh lesson on vulnerabilities, Server Side Request Forgery.\nClick Next to continue the lesson...";
+  msg="Welcome to the seventh lesson on vulnerabilities, Server Side Request Forgery.\n\nClick Next to continue the lesson...";
   pagenum = 0;
   showNextLesson = false;
   showResp = false;
@@ -23,7 +23,7 @@ export class Lesson8Component implements OnInit {
    
    switch(this.pagenum){
      case this.pagenum=0: {
-       this.msg="Welcome to the seventh lesson on vulnerabilities, Server Side Request Forgery.\nClick Next to continue the lesson..."
+       this.msg="Welcome to the seventh lesson on vulnerabilities, Server Side Request Forgery.\n\nClick Next to continue the lesson..."
        break;
      }
      case this.pagenum=1: {

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Lesson10Component implements OnInit {
 
-  msg="Welcome to the ninth lesson on vulnerabilities, Improper Inventory Management.\nClick Next to continue the lesson...";
+  msg="Welcome to the ninth lesson on vulnerabilities, Improper Inventory Management.\n\nClick Next to continue the lesson...";
   pagenum = 0;
   showNextLesson = false;
   showResp = false;
@@ -23,7 +23,7 @@ export class Lesson10Component implements OnInit {
    
    switch(this.pagenum){
      case this.pagenum=0: {
-       this.msg="Welcome to the ninth lesson on vulnerabilities, Improper Inventory Management.\nClick Next to continue the lesson..."
+       this.msg="Welcome to the ninth lesson on vulnerabilities, Improper Inventory Management.\n\nClick Next to continue the lesson..."
        break;
      }
      case this.pagenum=1: {
@@ -46,7 +46,7 @@ export class Lesson10Component implements OnInit {
          break;
            }
      case this.pagenum=5: {
-         this.msg="In conclusion, documentation is often an overlooked part of security in an API but it still plays an important role in keeping it safe. It is necesary for any API to have a detailed documentation that is constantly being updated and revised or it could lead to a blindspot in security that can be very difficult and tricky to fix.\nTo read about a real life scenario where Telco Optus lost a million dollars becaues of this vulnerability read more here: https://salt.security/blog/how-a-common-api-vulnerability-might-cost-telco-optus-1-million?";
+         this.msg="In conclusion, documentation is often an overlooked part of security in an API but it still plays an important role in keeping it safe. It is necesary for any API to have a detailed documentation that is constantly being updated and revised or it could lead to a blindspot in security that can be very difficult and tricky to fix.\n\nTo read about a real life scenario where Telco Optus lost a million dollars becaues of this vulnerability read more here: https://salt.security/blog/how-a-common-api-vulnerability-might-cost-telco-optus-1-million?";
          this.showResp = true; 
          this.showNext = false;
          //this.showPrev = false;

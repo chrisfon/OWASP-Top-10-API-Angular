@@ -36,7 +36,7 @@ input{
 .resp-box{
     
     margin-top: 20px;
-    background-color: #fff;
+    background-color: #F7F7F7 !important;
     
   }
   
@@ -143,6 +143,7 @@ input{
       flex: 1;
       overflow: hidden;
       justify-content: "center";
+      background-color: #F7F7F7 !important; 
     }
     .fake-browser .fake-window-body iframe {
       width: 100%;

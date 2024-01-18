@@ -47,7 +47,7 @@ export class Lesson5Component implements OnInit {
       }
       case (this.pagenum = 3): {
         this.msg =
-          "An example attack scenario for this type of vulnerability can be a company that has an API endpoint for a user who forgot his password to reset it. In this workflow the API calls to a third party API from a telephone company to tell it to send a text to the number associated to the account that forgot its password. If there is a cost associated to each text (for example $0.05 if it was in the USA) and there is no limit; an attacker could potentially make a script that will call to the forget password api thousands of times, leading to a huge loss of money for the website owner.\n\nAnother simple example could be website or application where a user can upload an image using an API; if there is no limit to the file size, an attacker could upload huge files and take up a big amount of the companie's storage.";
+          "An example attack scenario for this type of vulnerability can be a company that has an API endpoint for a user who forgot his password to reset it. In this workflow the API calls to a third party API from a telephone company to tell it to send a text to the number associated to the account that forgot its password. If there is a cost associated to each text (for example $0.05) and there is no limit; an attacker could potentially make a script that will call to the forget password api thousands of times, leading to a huge loss of money for the website owner.\nAnother simple example could be website or application where a user can upload an image using an API; if there is no limit to the file size, an attacker could upload huge files and take up a big amount of the companie's storage.";
         this.showIns = false;
         break;
       }
@@ -65,12 +65,12 @@ export class Lesson5Component implements OnInit {
         //this.showNext = false;
         //this.showPrev = false;
         this.msg = //fixes
-          "To prevent this vulnerabilities and mitigate their effect OWASP recommends:\n-  Using solutions that make it easy to limit memory, CPU, number of restarts, file descriptor, and processes with tools such as containers (docker) and/or serverless code.\n- Implement rate limiting so client is limited on how oftern a client can itneract with the API.\n- Base limits and throttle to be based on the business needs.\n- Input validation to prevent attackers from sending requests with a significant amount of processing or memory resources.\n- Configure billing and usage alerts in case there is an issue so it can be solved before it becomes a cost or storage problem.";
+          "To prevent this vulnerabilities and mitigate their effect OWASP recommends:\n\n-  Using solutions that make it easy to limit memory, CPU, number of restarts, file descriptor, and processes with tools such as containers (docker) and/or serverless code.\n- Implement rate limiting so client is limited on how oftern a client can itneract with the API.\n- Base limits and throttle to be based on the business needs.\n- Input validation to prevent attackers from sending requests with a significant amount of processing or memory resources.\n- Configure billing and usage alerts in case there is an issue so it can be solved before it becomes a cost or storage problem.";
         break;
       }
       case (this.pagenum = 6): {
         this.msg = //tests
-          "In conclusion, Unrestricted resource consumption is a tricky but still very serious risk that can affect a company financially and their service/product's availability and performance. It is very important to have a prevention strategy that will include the recommendations given in this lesson. If you would like to read more on this visit: https://cwe.mitre.org/data/definitions/400.html";
+          "In conclusion, Unrestricted resource consumption is a tricky but still very serious risk that can affect a company financially and their service/product's availability and performance. It is very important to have a prevention strategy that will include the recommendations given in this lesson.\n\nIf you would like to read more on this visit: https://cwe.mitre.org/data/definitions/400.html";
         this.showNext = false;
         this.showNextLesson = true;
         break;

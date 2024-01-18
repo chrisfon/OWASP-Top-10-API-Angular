@@ -30,7 +30,7 @@ export class Lesson6Component implements OnInit {
      }
      case this.pagenum=1: {
        this.showNext = true;
-     this.msg="Broken Function Level Authorization is a vulnerability related to access control to the function and endpoints in an API. It is a vital part of any API's security to restrict who can use what functions and access what endpoints.\nIn previous lessons we learned about the importance of controlling object's properties and exposure of objects; this is no different to that but is more related to the specific functions and endpoints. ";
+     this.msg="Broken Function Level Authorization is a vulnerability related to access control to the function and endpoints in an API. It is a vital part of any API's security to restrict who can use what functions and access what endpoints.\n\nIn previous lessons we learned about the importance of controlling object's properties and exposure of objects; this is no different to that but is more related to the specific functions and endpoints. ";
      break;
      }
      case this.pagenum=2: {
@@ -58,7 +58,7 @@ export class Lesson6Component implements OnInit {
          break;
            }
      case this.pagenum=6: {
-         this.msg="In conclusion this vulnerability is common because of how complex modern application heirarchies can be. It's impact can be huge if present. It is very important to triple check every role and group, and the paths used to access the endpoints to make sure this vulnerability will not affect your API.";
+         this.msg="In conclusion this vulnerability is common because of how complex modern application heirarchies can be. It's impact can be huge if present. It is very important to triple check every role and group, and the paths used to access the endpoints to make sure this vulnerability will not affect your API.\n\nIf you would like to read about a real life case in which a company was affected by this vulnerability visit this link: https://hackerone.com/reports/334143";
          this.showNext = false;
          //this.showPrev = false;
          this.showNextLesson = true;

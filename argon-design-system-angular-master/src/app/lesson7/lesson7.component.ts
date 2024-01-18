@@ -38,7 +38,7 @@ export class Lesson7Component implements OnInit {
      break;
      }
      case this.pagenum=2: {
-       this.msg="OWASP defines Unrestricted Access to Sensitive Business Flows as a overexposed business flow in an API endpoint. The impact and risk will vary from industry to industry but the logic behind it remains the same. This vulnerability can be present due to lack of mechanisms that will limit amount of requests and check if the requests are legitimately from a user and not automated.\n Attackers looking to exploit this vulnerabilty will look to disrupt or spam a business flow, commonly used techniques would be scalping in e-commerce websites, spamming a system with comments/posts in social media sites, spamming reservations in airlines, restaraunts, etc.";
+       this.msg="OWASP defines Unrestricted Access to Sensitive Business Flows as a overexposed business flow in an API endpoint. The impact and risk will vary from industry to industry but the logic behind it remains the same. This vulnerability can be present due to lack of mechanisms that will limit amount of requests and check if the requests are legitimately from a user and not automated.\n\nAttackers looking to exploit this vulnerabilty will look to disrupt or spam a business flow, commonly used techniques would be scalping in e-commerce websites, spamming a system with comments/posts in social media sites, spamming reservations in airlines, restaraunts, etc.";
        break;
        }
      case this.pagenum=3: {
@@ -49,7 +49,7 @@ export class Lesson7Component implements OnInit {
      case this.pagenum=4: {
          this.msg="TRY IT\nA script that could accomplish the attack described in our example will send a request (in this case POST) to the API with the information identifying the event and calling the buy function with the payment data included. Click Reserve now! to see how it should work, then run the script and continue";
          this.tickBought = 0;
-         this.tickLeft = 0;
+         this.tickLeft = 200;
          this.isDisabled = false; 
          this.showScript = true;
          
@@ -67,7 +67,7 @@ export class Lesson7Component implements OnInit {
            break;
            }
      case this.pagenum=7: {
-         this.msg="As mentioned before this vulnerability can be difficult to spot due to it being more logic based and not necessarily an error in best practices, specially in apps that have its different parts developed separately. It's important for any company to plan its mitigation strategy around its business logic and have automated attack in consideration when trying to avoid this kind of vulnerability.\n If you would like to read about a case in which this vulnerability was exploited to gather health-related information of healthline's clients visit here: https://www.apisec.ai/blog/how-hackers-acquired-patients-personal-data-from-healthline";
+         this.msg="As mentioned before this vulnerability can be difficult to spot due to it being more logic based and not necessarily an error in best practices, specially in apps that have its different parts developed separately. It's important for any company to plan its mitigation strategy around its business logic and have automated attack in consideration when trying to avoid this kind of vulnerability.\n\nIf you would like to read about a case in which this vulnerability was exploited to gather health-related information of healthline's clients visit here: https://www.apisec.ai/blog/how-hackers-acquired-patients-personal-data-from-healthline";
          this.showResp = true; 
          this.showNext = false;
          //this.showPrev = false;
@@ -118,7 +118,7 @@ scriptTicket(){
   }else{
     let result = 200 - this.tickBought;
     this.tickBought += result;
-    this.tickLeft -= result;
+    this.tickLeft = result;
   }
   
 }

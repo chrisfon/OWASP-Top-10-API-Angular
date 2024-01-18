@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Lesson9Component implements OnInit {
 
-  msg="Welcome to the eighth lesson on vulnerabilities, Security Misconfiguration.\nClick Next to continue the lesson...";
+  msg="Welcome to the eighth lesson on vulnerabilities, Security Misconfiguration.\n\nClick Next to continue the lesson...";
   pagenum = 0;
   showNextLesson = false;
   showResp = false;
@@ -24,7 +24,7 @@ export class Lesson9Component implements OnInit {
    
    switch(this.pagenum){
      case this.pagenum=0: {
-       this.msg="Welcome to the eighth lesson on vulnerabilities, Security Misconfiguration.\nClick Next to continue the lesson..."
+       this.msg="Welcome to the eighth lesson on vulnerabilities, Security Misconfiguration.\n\nClick Next to continue the lesson..."
        break;
      }
      case this.pagenum=1: {
@@ -37,13 +37,14 @@ export class Lesson9Component implements OnInit {
        break;
        }
      case this.pagenum=3: {
-       this.msg="Some characteristics to know if the API has this vulnerablity is if it includes:\n-Inappropiate secuity herdening in any part of the API stack or a cloud service that is used in the API.\n-Lack of latest security patches.\n-Security or cache control directeives aren't sent to clients.\n-Cross-Origin Resource Sharing (CORS) policy is missing or improperly set.\n-Error messages are verbose and iunclude sensitive information on the system (stack traces, paths,etc.)";
+       this.msg="Some characteristics to know if the API has this vulnerablity is if it includes:\n\n-Inappropiate secuity herdening in any part of the API stack or a cloud service that is used in the API.\n-Lack of latest security patches.\n-Security or cache control directeives aren't sent to clients.\n-Cross-Origin Resource Sharing (CORS) policy is missing or improperly set.\n-Error messages are verbose and iunclude sensitive information on the system (stack traces, paths,etc.)";
        
          break;
          }
      case this.pagenum=4: {
          this.msg="An example of this can be a simple scenario in which a given company has an up to date system with great security policies and component. It can even include advanced security by using a WAF, but left its database default users and credentials on. The problem can arise if not all credentials were properly checked to not be let in a default state. If this is the case any attacker could simply try a list of default passwords using a dictionary and access the admin account's credentials to view all the information in that databse.";
-         this.isDisabled = false; 
+         //this.isDisabled = false; para que no se active la "pantalla"
+         this.showNext = true;
          break;
            }
      case this.pagenum=5: {
@@ -56,7 +57,7 @@ export class Lesson9Component implements OnInit {
            break;
            }
      case this.pagenum=7: {
-         this.msg="In conclusion, this type of vulnerability is regarded as simple but if present can affect the critical parts of any organization. The most important takeaway is to never trust any default configuration and double check everything is enablde/disabled and set manually.\nTo Learn about a real-life scenario in which a bank was compromised using this type of misconfiguration read here: https://www.fugue.co/blog/a-technical-analysis-of-the-capital-one-cloud-misconfiguration-breach";
+         this.msg="In conclusion, this type of vulnerability is regarded as simple but if present can affect the critical parts of any organization. The most important takeaway is to never trust any default configuration and double check everything is enablde/disabled and set manually.\n\nTo Learn about a real-life scenario in which a bank was compromised using this type of misconfiguration read here: https://www.fugue.co/blog/a-technical-analysis-of-the-capital-one-cloud-misconfiguration-breach";
          this.showResp = true; 
          this.showNext = false;
          //this.showPrev = false;

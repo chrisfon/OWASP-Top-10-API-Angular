@@ -79,7 +79,7 @@ changeMsg() {
     }
     case (this.pagenum = 8): {
       this.msg =
-        "In conclusion, it is essential that there is a validation mechanism when a user accesses an object through the use of an API. Not doing so can result in data loss or corruption, unauthorized access to sensitive information, and in some cases can lead to privilege escalation or account takeover.\nTo read more about how this vulnerability affected citibank leading to a huge data leak visit: https://www.apisec.ai/blog/what-made-citis-hack-much-worse-how-to-avoid-the-same-mistake";
+        "In conclusion, it is essential that there is a validation mechanism when a user accesses an object through the use of an API. Not doing so can result in data loss or corruption, unauthorized access to sensitive information, and in some cases can lead to privilege escalation or account takeover.\n\nTo read more about how this vulnerability affected citibank leading to a huge data leak visit: https://www.apisec.ai/blog/what-made-citis-hack-much-worse-how-to-avoid-the-same-mistake";
       this.showNextLesson = true;
       //this.showResp = true;
       this.showNext = false;
