@@ -92,7 +92,7 @@
                     <div class="col mb-2 mt-2">
                       <!-- <button class="btn btn-primary">View Account History</button> -->
                       <div class="text-center">
-                        <button (click)="respShow()" class="btn btn-warning mb-2">Send Code</button>
+                        <button (click)="respShow()" class="btn btn-warning mb-2" [ngClass]="{'highlight_button':!showLogin}">Send Code</button>
                         <div *ngIf="showResp" class="row mb-3 text-center">
                           <div class="col">
                             <label class="text-success">Text Message to reset password sent succesfully! Follow instruction in the message to reset your passowrd.</label>
@@ -189,7 +189,7 @@
                     
                     </div>
                     <div class="col">
-                      <button class="btn btn-danger" (click)="forgotPass()" type="submit">Reset Password</button>
+                      <button class="btn btn-danger" (click)="forgotPass()" type="submit" [ngClass]="{'highlight_button':!isDisabled}">Reset Password</button>
                     
                     </div>
 

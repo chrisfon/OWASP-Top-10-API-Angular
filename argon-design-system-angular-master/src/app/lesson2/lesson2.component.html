@@ -13,7 +13,7 @@
       <button *ngIf="showPrev" (click)="prevMsg()" class="btn btn-warning">Back</button>
         <button *ngIf="showNext" (click)="nextMsg()" class="btn btn-warning">Next</button>
         
-      <a href="#/lesson2"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
+      <a href="#/lesson3"><button *ngIf="showNextLesson" class="btn btn-warning">Next Lesson</button></a>
       </div>
      </div>
  
@@ -109,7 +109,7 @@
                     <div class="col mb-2 mt-2">
                       <!-- <button class="btn btn-primary">View Account History</button> -->
                       <div class="text-center">
-                        <button *ngIf="showIns" (click)="respShow()" class="btn btn-warning">Inspect</button>
+                        <button *ngIf="showIns" (click)="respShow()" class="btn btn-warning highlight_button">Inspect</button>
                         <div class="resp-json-box w-0">
                           <code *ngIf="showResp" class="text-default"> {{response}}</code>
                         </div>

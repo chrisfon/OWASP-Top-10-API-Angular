@@ -37,7 +37,8 @@ export class Lesson8Component implements OnInit {
        }
      case this.pagenum=3: {
        this.msg="An attack of this kind occurs when an attacker successfully maniupulated and endpoint to make the targeted server perform unintended requests that can give the attacker valuable information or enable him to bypass security mechanisms for further attacks.\nGenerally, this type of attack exploits the fact there is trust in the servers running the API so if an attacker can 'trick' it into making his own custom requests, it can access internal or external resources from that server. An attacker can use external resources to help inject or excecute code, and/or redirect to malicious sites; it can use access to internal resources because by using a trust server it will most likely bypass any type of access control that is present.";
-       
+       this.showNextLesson = false;
+        this.showNext = true;
          break;
          }
          

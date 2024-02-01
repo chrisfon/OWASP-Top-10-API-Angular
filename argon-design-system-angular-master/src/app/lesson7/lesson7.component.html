@@ -81,15 +81,15 @@
                 </div>
               </nav>
                <section class="fake-window-body bg-white">
-                 <div class="p-5 text-center justify-content-center">
-                   <h3 class="mb-4">Ticket Shop</h3>
+                 <div class="p-3 text-center justify-content-center">
+                   <h3 class="mb-1">Ticket Shop</h3>
                    
                      
                          <div class="col-lg-12">
                              <div class="form-group mb-4">
                                <h4 class="font-weight-bold" disabled>New Years Event</h4>
                                <div>
-                                <img class=".img-fluid mb-3" style="width: 300px;" src="https://www.hamaraevent.com/uploads/blog/0832549001497083011.jpg">
+                                <img class=".img-fluid mb-3" style="width: 300px;" src="/assets/img/brand/NYE.png">
                                 <label >Join us for a glamorous New Year’s Eve celebration at the Stardust Ballroom! Dance the night away under twinkling lights, enjoy a midnight champagne toast, and witness a dazzling fireworks display. Dress elegantly and get ready to welcome 2024 in style! 200 tickets available. Limited to two tickets per account.</label>
                                 </div>
                             </div>
@@ -100,10 +100,10 @@
                          <div class="text-center">
                             <label class="font-weight-bold" disabled>Tickets Left: {{tickLeft}}</label>
                          </div>
-                         <button class="btn btn-warning mb-4" (click)="buyTicket()">Reserve now!</button>
+                         <button class="btn btn-warning mb-4" (click)="buyTicket()" [ngClass]="{'highlight_button':!isDisabled}">Reserve now!</button>
                          <div *ngIf="isScript" class="row align-items-center">
                            <div class="col">
-                            <button class="btn btn-danger" (click)="scriptTicket()">Run Script</button>
+                            <button class="btn btn-danger" (click)="scriptTicket()" [ngClass]="{'highlight_button':isScript}">Run Script</button>
                              <!-- -->
                            </div>
                            

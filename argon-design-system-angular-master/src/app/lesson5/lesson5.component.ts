@@ -66,7 +66,9 @@ export class Lesson5Component implements OnInit {
         //this.showPrev = false;
         this.msg = //fixes
           "To prevent this vulnerabilities and mitigate their effect OWASP recommends:\n\n-  Using solutions that make it easy to limit memory, CPU, number of restarts, file descriptor, and processes with tools such as containers (docker) and/or serverless code.\n- Implement rate limiting so client is limited on how oftern a client can itneract with the API.\n- Base limits and throttle to be based on the business needs.\n- Input validation to prevent attackers from sending requests with a significant amount of processing or memory resources.\n- Configure billing and usage alerts in case there is an issue so it can be solved before it becomes a cost or storage problem.";
-        break;
+          this.showNextLesson = false;
+          this.showNext = true;
+          break;
       }
       case (this.pagenum = 6): {
         this.msg = //tests
@@ -92,9 +94,13 @@ export class Lesson5Component implements OnInit {
 
   respShow() {
     this.showResp = true;
-    this.showNext = true;
-    this.showPrev = true;
+    
+    
     this.costCounter += 0.05;
+    if (this.costCounter > 0.15){
+      this.showPrev = true;
+      this.showNext = true;
+    }
   }
   forgotPass() {
     this.showLogin = false;

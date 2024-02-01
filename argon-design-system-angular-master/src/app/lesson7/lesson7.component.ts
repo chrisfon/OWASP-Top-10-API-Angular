@@ -47,7 +47,7 @@ export class Lesson7Component implements OnInit {
          break;
          }
      case this.pagenum=4: {
-         this.msg="TRY IT\nA script that could accomplish the attack described in our example will send a request (in this case POST) to the API with the information identifying the event and calling the buy function with the payment data included. Click Reserve now! to see how it should work, then run the script and continue";
+         this.msg="A script that could accomplish the attack described in our example will send a POST request to the API with the information identifying the event and calling the buy function with the payment data included. Click Reserve now! to see how it should work, then run the script and continue";
          this.tickBought = 0;
          this.tickLeft = 200;
          this.isDisabled = false; 
@@ -64,7 +64,9 @@ export class Lesson7Component implements OnInit {
          }
      case this.pagenum=6: {
          this.msg="To Mitigate against this type of attack OWASP recommends:\n- Planning to avoid and mitigate for this type of attack in two layer; Business (business flow) and Engineering (protecition mechanisms to be used).\n- Have a mechanism to slowdown automated threats such as Device fingerprinting, Captchas, biometric solutions.\n- Mechanism to detect non-human patterns. (in our exmaple detecting a ticket added to cart, going to pay now page, etc.)\n- Blocking commonly used IPs for automated attacks (such as from countries that dont affect your business, Tor exit nodes, etc.)";
-           break;
+         this.showNextLesson = false;
+        this.showNext = true;  
+         break;
            }
      case this.pagenum=7: {
          this.msg="As mentioned before this vulnerability can be difficult to spot due to it being more logic based and not necessarily an error in best practices, specially in apps that have its different parts developed separately. It's important for any company to plan its mitigation strategy around its business logic and have automated attack in consideration when trying to avoid this kind of vulnerability.\n\nIf you would like to read about a case in which this vulnerability was exploited to gather health-related information of healthline's clients visit here: https://www.apisec.ai/blog/how-hackers-acquired-patients-personal-data-from-healthline";

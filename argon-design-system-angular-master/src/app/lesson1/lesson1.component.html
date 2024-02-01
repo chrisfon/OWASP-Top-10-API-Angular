@@ -46,7 +46,7 @@
                            </div>
                         </div>
                         <div class="text-center">
-                        <button class="btn btn-primary" (click)="respShow()">Go</button>
+                        <button class="btn btn-warning" [ngClass]="{'highlight_button':!isDisabled}" (click)="respShow()">Go</button>
                         
                         </div>
                         <div class="row">

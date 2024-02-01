@@ -49,12 +49,15 @@ export class Lesson9Component implements OnInit {
            }
      case this.pagenum=5: {
          this.msg="TRY IT!\n\n As an attacker, we have been trying to access this server through pentesting different parts of its website. We discover its login uses active directory to authenticate it users to the administrative page. In Active directory there are 2 default users; Check if one of them are available!\n\nDefault Users:\n-User: Administrator | Password: admin\n-User: Guest | Password: (blank)";
+        this.isDisabled = false;
          this.showNext=false;
          break;
          }
      case this.pagenum=6: {
          this.msg="For Hardening against this type of vulnerability it is important to consider the following:\n-Have procceses in place that will help test for all the default values, help review and update configurations manually before deployment.\n-It is critical to have all API communication from client to the API server to be sent of an encrypted communication channel (transport layer sec).\n-Limit which http verbs each api can access (limit to GET if it should only get, disable the rest).\n-Include Applicable Security headers\n-Restrict incoming content types/data to only the formats needed.\n-Implement proper Cross-Origin Resource Sharing policies that will be based on your business needs.";
-           break;
+         this.showNextLesson = false;
+         this.showNext = true;  
+         break;
            }
      case this.pagenum=7: {
          this.msg="In conclusion, this type of vulnerability is regarded as simple but if present can affect the critical parts of any organization. The most important takeaway is to never trust any default configuration and double check everything is enablde/disabled and set manually.\n\nTo Learn about a real-life scenario in which a bank was compromised using this type of misconfiguration read here: https://www.fugue.co/blog/a-technical-analysis-of-the-capital-one-cloud-misconfiguration-breach";

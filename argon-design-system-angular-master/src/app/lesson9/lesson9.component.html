@@ -109,7 +109,7 @@
                           </div>
                         </div>
                       </div>
-                      <button (click)="loginClick()" class="btn btn-warning mt-3">Login</button>
+                      <button (click)="loginClick()" class="btn btn-warning mt-3" [ngClass]="{'highlight_button':!isDisabled}">Login</button>
                  </div>
                  
                </section>

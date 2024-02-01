@@ -19,6 +19,7 @@ export class Lesson3Component implements OnInit {
   showResult = false;
   emailInput = "bad.actor@itsmail.com";
   isDisabled = true;
+  isAnimation = false;
   response =
     "PUT /account\nAuthorization: Bearer <token> \n\n {'email': '<new_email_address>'}";
 
@@ -69,6 +70,8 @@ export class Lesson3Component implements OnInit {
         this.showNext = false;
         this.showPrev = false;
         this.isDisabled = false;
+        
+        
         break;
       }
       case (this.pagenum = 6): {
@@ -90,7 +93,8 @@ export class Lesson3Component implements OnInit {
         this.msg =
           "For testing an API for this kind of vulnerability it is important to keep a documented list of checkpoints, OWASP reccomends; Checking POST method is used for send data through HTTPS, make sure admin account cannot be blocked from invalid login atttempts, test for credential stuffing and brute force attacks (this can be done with tools such as hydra or wfuzz), check that the lockout mechanism is working properly, test for cache and history mechanism weaknesses, check any input related to password recovery and security has limited attempts, and verify every security measure in mobile (if it applies).";
         //this.showResp = true;
-
+        this.showNextLesson = false;
+        this.showNext = true;
         break;
       }
       case (this.pagenum = 9): {

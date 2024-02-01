@@ -92,8 +92,8 @@
                       </div>
 
                     </div>
-                    <div class="text-center">
-                      <button (click)="showInspect()" class="btn btn-warning">Tip</button>
+                    <div class="text-center" >
+                      <button (click)="showInspect()" class="btn btn-warning" [ngClass]="{'highlight_button':!isDisabled}">Tip</button>
                       
                     </div>
                     <div *ngIf="showIns" class="text-center">
@@ -106,7 +106,7 @@
                       <!-- <button class="btn btn-primary">View Account History</button> -->
                       <div class="text-center">
                         
-                        <button *ngIf="showIns" (click)="respShow()" class="btn btn-warning">Inspect</button>
+                        <button *ngIf="showIns" (click)="respShow()" class="btn btn-warning" [ngClass]="{'highlight_button':showIns}">Inspect</button>
                         <div class="resp-json-box w-0">
                           <code *ngIf="showResp" class="text-default"> {{response}}</code>
                         </div>

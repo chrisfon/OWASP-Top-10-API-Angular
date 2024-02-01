@@ -46,7 +46,9 @@ export class Lesson2Component implements OnInit {
       case (this.pagenum = 3): {
         this.msg =
           "As an example of this we can take an API that is used by a website that utlizes an API to pull user information when accesing and editing their profile.\n\n In this case we can check out our inspect and it will show us that the API uses a structure in their query that follows api/users/[ID].\n\nIf a BOLA vulnerability is present, and no verification of that the user making the call has permission to view the information called; then the attacker will be able to view the settings and information of any user by sending a GET request with another ID of his choice.";
-        this.showIns = false;
+      
+        this.showNext = true;
+        this.isDisabled = true;
         break;
       }
       case (this.pagenum = 4): {
@@ -54,16 +56,18 @@ export class Lesson2Component implements OnInit {
           "TRY IT!\n\n Click the inspect button in the browser to see the JSON object that is being pulled when accessing the user settings.\n\n In this case it calls to our api using the GET method towards api/user/[userID]";
         this.isDisabled = false;
         this.showNext = false;
-        this.showPrev = false;
+        this.showPrev = true;
         this.showIns = true;
         break;
       }
       case (this.pagenum = 5): {
+        this.showIns = false;
         this.showResp = false;
         this.showNext = false;
         this.showPrev = false;
+        this.showIns = true;
         this.msg =
-          "With any program to test APIs, (for example, POSTMAN) we can try and call to the API using another user ID; try it again with the Inspect button in the browser and notice the changes in red.\n\n In this case since there is no verification that the user making the API call is actually logged into the user they are searching, then it will let said user request information by using any other user's ID.";
+          "Click Inspect again.\n\nWith any program to test APIs, (for example, POSTMAN) we can try and call to the API using another user ID; try it again with the Inspect button in the browser and notice the changes in red.\n\n In this case since there is no verification that the user making the API call is actually logged into the user they are searching, then it will let said user request information by using any other user's ID.";
         break;
       }
       case (this.pagenum = 6): {
@@ -76,7 +80,8 @@ export class Lesson2Component implements OnInit {
         this.msg =
           "Keep in mind that when testing an API's security for this type of vulnerability it is important to Identify session labels (what is used by the API to identify the logged-in user.), then send API requests using different user's session labels to make sure only the information the user has permission to view is opened. If not the vulnerability still exists.";
         //this.showResp = true;
-
+        this.showNextLesson = false;
+        this.showNext = true;
         break;
       }
       case (this.pagenum = 8): {
@@ -104,6 +109,7 @@ export class Lesson2Component implements OnInit {
   }
 
   respShow() {
+    
     if (this.pagenum < 5) {
       this.changeTextColorBlack();
       this.showResp = !this.showResp;

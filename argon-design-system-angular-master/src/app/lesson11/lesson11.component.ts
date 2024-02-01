@@ -48,6 +48,7 @@ export class Lesson11Component implements OnInit {
      case this.pagenum=5: {
          this.msg="As for hardening against this category of vulnerabilities OWASP recommends:\n\n-Asses third party service security before integrating it in your own API.\n-Ensure any communication between APIs (even if both are your own) happens over a secure communication channel (TLS).\n-Make sure to always properly sanitize data recieved from integration before using it in your own API.\n-For APIs that use redirection make sure to have a whitelist of the permited sites to be redirected to and blacklist any others.";
          this.showNext = true;
+         
          break;
          }
      case this.pagenum=6: {

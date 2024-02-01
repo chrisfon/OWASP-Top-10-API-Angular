@@ -74,7 +74,8 @@ changeMsg() {
     case (this.pagenum = 7): {
       this.msg =
         "- Keep returned data structure to the bare minimum based on the businesses requirements.\n- Allow changes only to the object's properties that should be updated by the client.\n- Optionally, implement a schema-based response validation mechanism as an extra leter of security. (A mechanism that will define and enfore data return by API methods.)";
-        
+        this.showNextLesson = false;
+        this.showNext = true;
       break;
     }
     case (this.pagenum = 8): {

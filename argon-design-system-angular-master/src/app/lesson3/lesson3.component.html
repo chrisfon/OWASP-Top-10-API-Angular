@@ -63,7 +63,7 @@
 
   <div class="browser-box col-9">
     
-      <div class="fake-browser" [attr.disabled]="isDisabled ? true : null">
+      <div class="fake-browser" [attr.disabled]="isDisabled ? true : null" [attr.animation]="isAnimation ? true:null">
         <header class="fake-browser-header">
           
           <div class="action-btns">
@@ -130,8 +130,9 @@
                   readonly
                 />
 
-                <div class="input-group-append">
+                <div class="input-group-append" [ngClass]="{'highlight_button':!isDisabled}">
                   <button
+                  
                     class="btn btn-warning"
                     id="putBtn"
                     (click)="putClick()"
@@ -154,11 +155,11 @@
                       readonly
                     />
                   </div>
-                  <div class="col">
+                  <div class="col" [ngClass]="{'highlight_button':!isDisabled}">
                     <label class="font-weight-bold" disabled>Auth Token</label>
                     <input
                       type="text"
-                      class="form-control text-body"
+                      class="form-control text-body" 
                       id="token-input"
                       placeholder="Please type Auth. Token Here"
                     />

@@ -24,6 +24,7 @@ export class Lesson10Component implements OnInit {
    switch(this.pagenum){
      case this.pagenum=0: {
        this.msg="Welcome to the ninth lesson on vulnerabilities, Improper Inventory Management.\n\nClick Next to continue the lesson..."
+       this.isDisabled = false; 
        break;
      }
      case this.pagenum=1: {
@@ -42,7 +43,9 @@ export class Lesson10Component implements OnInit {
          }
      case this.pagenum=4: {
          this.msg="For hardening, OWASP recommends:\n-Keep a detailed inventory of all API hosts and important aspects of each one, with a focus on API environment (production, staging, tests, interactions, network accesses,etc.)\n-Invetory of integrated services and important aspects like their role in the overall system, what data should be exhanged, their sensitivity, etc.\n-Make sure API documentation is ONLY available to authorized people in the organization.\n-Avoid mixing data from production servers and API with staging/development servers and API.\n-If older versions are needed, make sure to algo perfrom risk analysis and have mitigation plans for them.";
-         this.isDisabled = false; 
+         
+         this.showNextLesson = false;
+        this.showNext = true;
          break;
            }
      case this.pagenum=5: {

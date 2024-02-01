@@ -45,8 +45,8 @@
                             </div>
                          </div>
                          <div class="text-center">
-                         <button class="btn btn-primary" (click)="respShow()">Go</button>
-                         <button *ngIf="showIns" class="btn btn-primary" (click)="respShow()">Inspect</button>
+                         <button class="btn btn-warning" (click)="respShow()" [ngClass]="{'highlight_button':!isDisabled}">Go</button>
+                         <button *ngIf="showIns" class="btn btn-warning" (click)="respShow()" [ngClass]="{'highlight_button':showIns}">Inspect</button>
                          </div>
                          <div class="row">
                            <div class="col">

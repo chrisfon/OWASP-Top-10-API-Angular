@@ -38,21 +38,26 @@ export class Lesson1Component implements OnInit {
       }
     case this.pagenum=3: {
       this.msg="PUT: This method replaces or changes a resource in the server. Generally it uses a unique identifier to know which resource to change. If it tries to change a rouse that does not exist it will create a new resource. It commonly uses JSON and XML formats.\nDELETE: This method removes a resource from the server. It generally uses a unique identifier to know which resource to delete. It changes the state of resources on the server.";
-      
+      this.showNext = true;
+      this.isDisabled = true; 
         break;
         }
     case this.pagenum=4: {
-        this.msg="Most RESTful APIs will accept and return data in a JSON or XML format which we then can change with a programming language to proces the data however a developer would like. In some cases it can return data in plain text, HTML, or YAML.\n\n Try it in the example window to see how a JSON file request and response would look like and continue";
+        this.msg="Most RESTful APIs will accept and return data in a JSON or XML format which we then can change with a programming language to proces the data however a developer would like. In some cases it can return data in plain text, HTML, or YAML.\n\n Try it in the example window, by clicking the highlighted button to see how a JSON file request and response would look like and continue";
         this.isDisabled = false; 
+        this.showNext = false;
         break;
           }
     case this.pagenum=5: {
         this.msg="An example of usages of API can be something as simple as calling to a weather API (with GET and some IDs in this case) that will return current weather conditions of specified latitud and longitud (included in the address)";
+        
         break;
         }
     case this.pagenum=6: {
         this.msg="Although APIs have a great upside of providing tons of utility it can also represent a security risk for any company that develops and/or consumes one. It is important that any developer follows the best security practices when making or consuming an API because it can lead to incidents such as data leaks, loss of trust in the company and loss of integrity in data.\n A solution that will help mitigate some of these issues can be the use of a Secutiy Framework that will provide a guide to help avoid having vulnerabilities and follow the most secure practices when developing an API.";
-          break;
+        this.showNextLesson = false;
+        this.showNext = true;  
+        break;
           }
     case this.pagenum=7: {
         this.msg="Throughout the lessons provided we will learn about the most common vulnerabilities and recommendations for how to deal with these vulnerablitiles based on the OWASP Security Framework.";
@@ -84,6 +89,7 @@ export class Lesson1Component implements OnInit {
 
  respShow(){
   this.showResp = !this.showResp;
+  this.showNext = true;
  }
 
   constructor() { }
