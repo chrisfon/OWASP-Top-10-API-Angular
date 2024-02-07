@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Lesson6Component implements OnInit {
 
-  msg="Welcome to the fifth lesson where we will learn about Unrestrictive Access to business flows.\nClick next and follow the steps...";
+  msg="Welcome to the fifth lesson where we will learn about Broken Function Level Authorization.\nClick next and follow the steps...";
   pagenum = 0;
   showNextLesson = false;
   showResp = false;
@@ -34,13 +34,13 @@ export class Lesson6Component implements OnInit {
      break;
      }
      case this.pagenum=2: {
-       this.msg="OWASP defines Broken Function Level Authorization as an exploitation that requires an attacker to send a ligitimate api call to an API endpoint they should not have acces to as anonymous or regular user. They are usually exposed endpoint that can be easily exploited.\n\nAuthorization checks for a function are usually managed via configuration files or at a code level. Implementation of proper checks is very important but can be a complex task in modern applications that handle a lot of roles and groups.\n\nThis type of vulnerability can have a high impact if exploited as it allows attacker to access important (sometimes admin) functions. Access to this can lead to data loss, exposure of sensitive information, data corruption, privilege escalation and/or service disruption.";
+       this.msg="OWASP defines Broken Function Level Authorization as an exploitation that requires an attacker to send a ligitimate api call to an API endpoint they should not have acces to as anonymous or regular user. They are usually exposed endpoint that can be easily exploited.\nAuthorization checks for a function are usually managed via configuration files or at a code level. Implementation of proper checks is very important but can be a complex task in modern applications that handle a lot of roles and groups.\nThis type of vulnerability can have a high impact if exploited as it allows attackers to access critical functions. Access to this can lead to data loss, exposure of sensitive information, data corruption, privilege escalation and/or service disruption.";
        break;
        }
      case this.pagenum=3: {
        this.msg="A simple example of this can be an application in which it has the option for a user to search another user through the use of an Ppi's GET Call which will take the input from the user and search it in a database to find a match. If no Authorization checks are in place then a user could craft an identical api call to the search but using another method such as DELETE, PUT or POST to either delete, modify or create data. This could cause tons of problemas for any business at it would let the attacker modify or create admin and other accounts.\n\nPress the Get and Inspect button to see the request and then Next to see how an attacker could simple change the HTTP Method to create a malicious request and make an admin account.";
        this.showNext = false;
-       this.showPrev = false;
+       this.showPrev = true;
        this.isDisabled = false; 
        this.showReq = false;
        this.showResp = false;

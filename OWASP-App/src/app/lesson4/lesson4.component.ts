@@ -15,10 +15,6 @@ showNext = true;
 showPrev = true;
 compDisabled = false;
 showIns = false;
-fName = "";
-lName = "";
-accNum = "";
-accAmo = "";
 color = "black-50";
 isDisabled = true;
 response =
@@ -112,17 +108,8 @@ respShow() {
     this.showPrev = true;
 }
 
-changeTextColorRed() {
-  this.response = "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'Jane', \n'Last Name' : 'Doe', \n'AccountNum' : 'CR21212121212',\n'Account Amount' : '100,000'\n}";
-  const fnameInput = document.getElementById("fName-input");
-  fnameInput.style.color = "red";
-  const lnameInput = document.getElementById("lName-input");
-  lnameInput.style.color = "red";
-  const accNumInput = document.getElementById("accNum-input");
-  accNumInput.style.color = "red";
-  const accAmoInput = document.getElementById("accAmo-input");
-  accAmoInput.style.color = "red";
-}
+
+
 changeTextColorBlack() {
   this.response="HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'John', \n'Last Name' : 'Smith', \n'AccountNum' : 'CR11111111111',\n'Account Amount' : '6000'\n}";
   const fnameInput = document.getElementById("fName-input");

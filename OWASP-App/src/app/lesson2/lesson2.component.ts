@@ -64,7 +64,7 @@ export class Lesson2Component implements OnInit {
         this.showIns = false;
         this.showResp = false;
         this.showNext = false;
-        this.showPrev = false;
+        this.showPrev = true;
         this.showIns = true;
         this.msg =
           "Click Inspect again.\n\nWith any program to test APIs, (for example, POSTMAN) we can try and call to the API using another user ID; try it again with the Inspect button in the browser and notice the changes in red.\n\n In this case since there is no verification that the user making the API call is actually logged into the user they are searching, then it will let said user request information by using any other user's ID.";

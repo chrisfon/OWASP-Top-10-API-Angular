@@ -14,10 +14,8 @@ export class Lesson11Component implements OnInit {
   showNext = true;
   showPrev = true;
   compDisabled=false;
-  isDisabled = true;
-  request = "GET api/v1/latitude=52.52&longitude=13.41&current=temperature HTTP1.1 200\nHost:api.open-meteo.com/\nContent-Type: application/json\nConnection: keep-alive\nContent-Length: 35\n Expires: 0"
-  response="{\n'latitude': 52.52,\n'longitude': 13.419998,\n'timezone': 'GMT',\n'timezone_abbreviation': 'GMT',\n'elevation': 38.0\n'temperature': 2.4\n}"
- 
+  isDisabled = false;
+  
   changeMsg(){
    //this.pagenum += 1;
    

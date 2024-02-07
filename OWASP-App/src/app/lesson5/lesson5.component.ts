@@ -7,19 +7,13 @@ import { Component, OnInit } from "@angular/core";
 })
 export class Lesson5Component implements OnInit {
   msg =
-    "Welcome to the fourth vulnerability we will be learning about. Unrestricted Resource Consumption.\n\n Click next and follow the steps.";
+    "Welcome to the fourth vulnerability we will be learning about; Unrestricted Resource Consumption.\n\n Click next and follow the steps.";
   pagenum = 0;
   showNextLesson = false;
   showResp = false;
   showNext = true;
   showPrev = true;
-  compDisabled = false;
   showIns = false;
-  fName = "";
-  lName = "";
-  accNum = "";
-  accAmo = "";
-  color = "black-50";
   costCounter = 0;
   showLogin = true;
   isDisabled = true;
@@ -31,7 +25,7 @@ export class Lesson5Component implements OnInit {
       case (this.pagenum = 0): {
         this.showNext = true;
         this.msg =
-          "Welcome to the fourth vulnerability we will be learning about. Unrestricted Resource Consumption.\n\n Click next and follow the steps.";
+          "Welcome to the fourth vulnerability we will be learning about; Unrestricted Resource Consumption.\n\n Click next and follow the steps.";
         this.showIns = false;
         break;
       }
@@ -106,30 +100,6 @@ export class Lesson5Component implements OnInit {
     this.showLogin = false;
   }
 
-  changeTextColorRed() {
-    this.response =
-      "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'Jane', \n'Last Name' : 'Doe', \n'AccountNum' : 'CR21212121212',\n'Account Amount' : '100,000'\n}";
-    const fnameInput = document.getElementById("fName-input");
-    fnameInput.style.color = "red";
-    const lnameInput = document.getElementById("lName-input");
-    lnameInput.style.color = "red";
-    const accNumInput = document.getElementById("accNum-input");
-    accNumInput.style.color = "red";
-    const accAmoInput = document.getElementById("accAmo-input");
-    accAmoInput.style.color = "red";
-  }
-  changeTextColorBlack() {
-    this.response =
-      "HTTP1.1 200\nServer:openresy/1.17\nContent-Type: application/json\nConnection: keep-alive\nCache-Control: no-cache, no-store\n Expires: 0\nX-Frame-Options: DENY\n { \n'UserID' : '0412', \n'First Name' : 'John', \n'Last Name' : 'Smith', \n'AccountNum' : 'CR11111111111',\n'Account Amount' : '6000'\n}";
-    const fnameInput = document.getElementById("fName-input");
-    fnameInput.style.color = "black";
-    const lnameInput = document.getElementById("lName-input");
-    lnameInput.style.color = "black";
-    const accNumInput = document.getElementById("accNum-input");
-    accNumInput.style.color = "black";
-    const accAmoInput = document.getElementById("accAmo-input");
-    accAmoInput.style.color = "black";
-  }
   constructor() {}
 
   ngOnInit(): void {}
